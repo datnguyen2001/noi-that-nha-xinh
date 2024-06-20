@@ -19,10 +19,10 @@
 {{--                </a>--}}
                 <div class="row align-items-center">
                     <div class="col-md-3">
-                        <div class="camera_block">
-                            <a href="{{route('cameraVideo')}}">Camera 360
+                        <div class="camera_block mb-5">
+{{--                            <a href="{{route('cameraVideo')}}">Camera 360--}}
 {{--                                <i class="fas fa fa-globe"></i>--}}
-                            </a>
+{{--                            </a>--}}
                         </div>
                         <div class="lien_he">
                             <a href="{{route('lien-he')}}">
@@ -34,18 +34,18 @@
                     <div class="col-md-6">
                         <div class="logo">
                             <div class="slogan_block">
-                                <span> Sống chất thượng lưu </span>
+                                <span> {{@$setting->name_header}} </span>
                             </div>
                             <a href="{{route('home')}}">
                                 <noscript><img decoding="async" alt="logo" width="100%" height="100%"
-                                               data-src="{{asset('assets/images/logo-haanh.png')}}"
+                                               data-src="{{asset(@$setting->logo)}}"
                                                class="lazyload"
-                                               src="{{asset('assets/images/logo-haanh.png')}}">
+                                               src="{{asset(@$setting->logo)}}">
                                 </noscript>
                                 <img decoding="async" alt="logo" width="100%" height="100%"
-                                     data-src="{{asset('assets/images/logo-haanh.png')}}"
+                                     data-src="{{asset(@$setting->logo)}}"
                                      class="lazyloaded"
-                                     src="{{asset('assets/images/logo-haanh.png')}}"></a>
+                                     src="{{asset(@$setting->logo)}}"></a>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -55,9 +55,9 @@
                             </a>
                         </div>
                         <div class="information-phone">
-                            <a href="tel:0902 261 386">
+                            <a href="tel:{{@$setting->hotline}}">
 {{--                                <i class="fas fa-phone"></i>--}}
-                                <span>Hotline:0902 261 386</span>
+                                <span>Hotline:{{@$setting->hotline}}</span>
                             </a>
                         </div>
                     </div>
