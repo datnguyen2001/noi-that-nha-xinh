@@ -37,7 +37,7 @@
                         <div class="col-3">Bật/tắt :</div>
                         <div class="col-8">
                             <div class="form-check form-switch">
-                                <input class="form-check-input" name="display" type="checkbox"
+                                <input class="form-check-input" name="display" checked type="checkbox"
                                        id="flexSwitchCheckChecked">
                                 <label class="form-check-label" for="flexSwitchCheckChecked">Hiện </label>
                             </div>

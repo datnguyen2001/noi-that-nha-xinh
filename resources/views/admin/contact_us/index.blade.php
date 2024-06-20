@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-3">Tiêu đề :</div>
                     <div class="col-8">
-                        <input class="form-control" name="title" value="{{@$data->name}}" type="text">
+                        <input class="form-control" name="name" value="{{@$data->name}}" type="text">
                     </div>
                 </div>
                 <div class="row mt-3">
@@ -63,7 +63,7 @@
                 <div class="row mt-3">
                     <div class="col-3">Map nhà máy sản xuất :</div>
                     <div class="col-8">
-                        <input class="form-control" name="map_office" value="{{@$data->map_factory}}" type="text" >
+                        <input class="form-control" name="map_factory" value="{{@$data->map_factory}}" type="text" >
                     </div>
                 </div>
 
