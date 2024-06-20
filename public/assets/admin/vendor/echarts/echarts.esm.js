@@ -47086,7 +47086,7 @@ var defaultOption = {
 var categoryAxis = merge({
   // The gap at both ends of the axis. For categoryAxis, boolean.
   boundaryGap: true,
-  // Set false to faster category collection.
+  // Set false to faster category bo-suu-tap.
   deduplication: null,
   // splitArea: {
   // show: false
@@ -67988,7 +67988,7 @@ var candlestickLayout = {
           x: pmin[0],
           y: pmin[1],
           width:  candleWidth ,
-          height:  pmax[1] - pmin[1] 
+          height:  pmax[1] - pmin[1]
         };
       }
 

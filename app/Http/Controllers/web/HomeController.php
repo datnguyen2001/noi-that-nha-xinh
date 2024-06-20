@@ -31,7 +31,23 @@ class HomeController extends Controller
 {
     public function home()
     {
-
         return view('web.home.index');
+    }
+    public function hotSale(){
+        return view('web.hot-sale.index');
+    }
+    public function cameraVideo() {
+        return view('web.camera-video.index');
+    }
+    public function contact() {
+        return view('web.contact.index');
+    }
+    public function introduction()
+    {
+        return view('web.introduction.index');
+    }
+    public function tinTuc()
+    {
+        return view ('web.tin-tuc.index');
     }
 }

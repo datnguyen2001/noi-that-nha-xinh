@@ -8998,7 +8998,7 @@
       };
     };
 
-    const searchResultsClass = 'tox-collection--results__js';
+    const searchResultsClass = 'tox-bo-suu-tap--results__js';
     const augmentWithAria = item => {
       var _a;
       if (item.dom) {
@@ -9051,9 +9051,9 @@
         tag: 'div',
         classes: [
           'tox-menu',
-          'tox-collection',
-          'tox-collection--toolbar',
-          'tox-collection--toolbar-lg'
+          'tox-bo-suu-tap',
+          'tox-bo-suu-tap--toolbar',
+          'tox-bo-suu-tap--toolbar-lg'
         ]
       },
       components: [Menu.parts.items({
@@ -9110,8 +9110,8 @@
         tag: 'div',
         classes: [
           'tox-menu',
-          'tox-collection'
-        ].concat(columns === 1 ? ['tox-collection--list'] : ['tox-collection--grid'])
+          'tox-bo-suu-tap'
+        ].concat(columns === 1 ? ['tox-bo-suu-tap--list'] : ['tox-bo-suu-tap--grid'])
       },
       components: [insertItemsPlaceholder(columns, initItems, identity)]
     });
@@ -9122,9 +9122,9 @@
           tag: 'div',
           classes: [
             'tox-menu',
-            'tox-collection',
+            'tox-bo-suu-tap',
             searchResultsClass
-          ].concat(columns === 1 ? ['tox-collection--list'] : ['tox-collection--grid']),
+          ].concat(columns === 1 ? ['tox-bo-suu-tap--list'] : ['tox-bo-suu-tap--grid']),
           attributes: { id: ariaControlsSearchResults }
         },
         components: [insertItemsPlaceholder(columns, initItems, augmentWithAria)]
@@ -9137,8 +9137,8 @@
           tag: 'div',
           classes: [
             'tox-menu',
-            'tox-collection'
-          ].concat(columns === 1 ? ['tox-collection--list'] : ['tox-collection--grid'])
+            'tox-bo-suu-tap'
+          ].concat(columns === 1 ? ['tox-bo-suu-tap--list'] : ['tox-bo-suu-tap--grid'])
         },
         components: [
           renderMenuSearcher({
@@ -9149,7 +9149,7 @@
             dom: {
               tag: 'div',
               classes: [
-                ...columns === 1 ? ['tox-collection--list'] : ['tox-collection--grid'],
+                ...columns === 1 ? ['tox-bo-suu-tap--list'] : ['tox-bo-suu-tap--grid'],
                 searchResultsClass
               ],
               attributes: { id: ariaControlsSearchResults }
@@ -9163,8 +9163,8 @@
       dom: {
         tag: 'div',
         classes: [
-          'tox-collection',
-          'tox-collection--horizontal'
+          'tox-bo-suu-tap',
+          'tox-bo-suu-tap--horizontal'
         ]
       },
       components: [Menu.parts.items({ preprocess: items => preprocessCollection(items, (_item, i) => initItems[i].type === 'separator') })]
@@ -12612,8 +12612,8 @@
     const renderCollection = (spec, providersBackstage, initialData) => {
       const pLabel = spec.label.map(label => renderLabel$3(label, providersBackstage));
       const runOnItem = f => (comp, se) => {
-        closest$1(se.event.target, '[data-collection-item-value]').each(target => {
-          f(comp, se, target, get$f(target, 'data-collection-item-value'));
+        closest$1(se.event.target, '[data-bo-suu-tap-item-value]').each(target => {
+          f(comp, se, target, get$f(target, 'data-bo-suu-tap-item-value'));
         });
       };
       const setContents = (comp, items) => {
@@ -12671,7 +12671,7 @@
       const pField = FormField.parts.field({
         dom: {
           tag: 'div',
-          classes: ['tox-collection'].concat(spec.columns !== 1 ? ['tox-collection--grid'] : ['tox-collection--list'])
+          classes: ['tox-bo-suu-tap'].concat(spec.columns !== 1 ? ['tox-bo-suu-tap--grid'] : ['tox-bo-suu-tap--list'])
         },
         components: [],
         factory: { sketch: identity },
@@ -12710,17 +12710,17 @@
           }),
           Tabstopping.config({}),
           Keying.config(deriveCollectionMovement(spec.columns, 'normal')),
-          config('collection-events', collectionEvents)
+          config('bo-suu-tap-events', collectionEvents)
         ]),
         eventOrder: {
           [execute$5()]: [
             'disabling',
             'alloy.base.behaviour',
-            'collection-events'
+            'bo-suu-tap-events'
           ]
         }
       });
-      const extraClasses = ['tox-form__group--collection'];
+      const extraClasses = ['tox-form__group--bo-suu-tap'];
       return renderFormFieldWith(pLabel, pField, extraClasses, []);
     };
 

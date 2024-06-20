@@ -1,14 +1,56 @@
 @extends('web.index')
 @section('title','Trang chủ')
 
-@section('style_page')
-<link rel="stylesheet" href="{{asset('assets/css/home.css')}}">
-@stop
 {{--content of page--}}
 @section('content')
-
-
-@stop
-@section('script_page')
-<script src="{{asset('assets/js/home.js')}}"></script>
+    <div id="slider">
+        <div class="slider-item">
+            <noscript><img decoding="async" alt="img-slide" width="100%" height="100%"
+                           data-src="{{asset('assets/images/Ban-PC.jpg')}}" class="lazyload"
+                           src="{{asset('assets/images/Ban-PC.jpg')}}"/></noscript>
+            <img decoding="async" alt="img-slide" width="100%" height="100%"
+                 data-src="{{asset('assets/images/Ban-PC.jpg')}}" class="lazyloaded"
+                 src="{{asset('assets/images/Ban-PC.jpg')}}"/></div>
+    </div>
+    <div id="content" class="site-content">
+        <div class="container">
+            <main id="main" class="site-main" role="main">
+                <section id="video-section" class="home-section">
+                    @include('web.home.partials.video')
+                </section>
+                <section id="sale" class="sale-section home-section">
+                    @include('web.home.partials.flash_sale')
+                </section>
+                <section id="product-categories" class="product-categories product-goc home-section">
+                    @include('web.home.partials.oc_cho_category')
+                </section>
+                <section id="product-categories2" class="product-categories product-tcd home-section">
+                    @include('web.home.partials.tan_co_dien_category')
+                </section>
+            </main>
+        </div>
+        <section id="banner_pc" class="home-section homepage-banner">
+            @include('web.home.partials.banner')
+        </section>
+        <div class="container">
+            <main id="main" class="site-main" role="main">
+                <section id="project-categories" class="project-section home-section">
+                    @include('web.home.partials.project_category')
+                </section>
+                <section id="project-categories2" class="project-section home-section">
+                    @include('web.home.partials.project_category_2')
+                </section>
+                <section id="video360" class="video360-section home-section">
+                    @include('web.home.partials.full_video')
+                </section>
+                <section class="home-section" id="testimonials">
+                    @include('web.home.partials.comment')
+                </section>
+                <section id="setofproduct" class="home-section">
+                    @include('web.home.partials.collection')
+                </section>
+            </main>
+        </div>
+        <script data-two_delay_src='inline' data-two_delay_id="two_666c2e6f3e170"></script>
+    </div>
 @stop
