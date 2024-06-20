@@ -500,7 +500,7 @@ interface CheckboxSpec extends FormComponentSpec {
     enabled?: boolean;
 }
 interface CollectionSpec extends FormComponentWithLabelSpec {
-    type: 'collection';
+    type: 'bo-suu-tap';
 }
 interface CollectionItem {
     value: string;

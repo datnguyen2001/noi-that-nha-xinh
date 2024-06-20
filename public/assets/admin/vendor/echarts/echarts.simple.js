@@ -42894,7 +42894,7 @@
     var categoryAxis = merge({
       // The gap at both ends of the axis. For categoryAxis, boolean.
       boundaryGap: true,
-      // Set false to faster category collection.
+      // Set false to faster category bo-suu-tap.
       deduplication: null,
       // splitArea: {
       // show: false

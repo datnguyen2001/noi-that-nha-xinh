@@ -5987,7 +5987,7 @@
       }
     }
     _getChildren() {
-      // collection of inner elements
+      // bo-suu-tap of inner elements
       return SelectorEngine.find(SELECTOR_INNER_ELEM, this._parent);
     }
     _getActiveElem() {

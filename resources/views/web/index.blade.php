@@ -23,16 +23,23 @@
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/web/css/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/web/css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/web/css/site.css') }}">
+    <script src="{{asset('assets/web/js/header.js')}}"></script>
+    <script src="{{asset('assets/web/js/all.js')}}"></script>
     @yield('style_page')
 </head>
 
 <body>
 
 @include('web.partials.header')
-<main class="main">
-    @yield('content')
-</main>
+
+@yield('content')
+
 @include('web.partials.footer')
 
 
@@ -48,6 +55,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 @yield('script_page')
 <script src="{{ asset('assets/js/main.js') }}"></script>
 
