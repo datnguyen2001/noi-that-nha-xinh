@@ -73,7 +73,8 @@ class ProductController extends Controller
             }else{
                 $sale = 0;
             }
-
+            $price = $request->get('price');
+            $price_promotional = $request->get('price_promotional');
             $product = new ProductModel([
                 'name' => $request->get('title'),
                 'slug' => $request->get('title'),
@@ -84,8 +85,8 @@ class ProductController extends Controller
                 'sectors'=>$request->get('sectors'),
                 'producer'=>$request->get('producer'),
                 'other_materials'=>$request->get('other_materials'),
-                'price'=>$request->get('price'),
-                'price_promotional' => $request->get('price_promotional'),
+                'price'=>isset($price) ? str_replace(",", "", $price) : null,
+                'price_promotional' => isset($price_promotional) ? str_replace(",", "", $price_promotional) : null,
                 'pricing'=>$pricing,
                 'describe'=>$request->get('describe'),
                 'why_choose_us'=>$request->get('why_choose_us'),
@@ -179,6 +180,8 @@ class ProductController extends Controller
             }else{
                 $sale = 0;
             }
+            $price = $request->get('price');
+            $price_promotional = $request->get('price_promotional');
             $product->name = $request->get('title');
             $product->slug = Str::slug($request->get('title'));
             $product->category_id = $category_id;
@@ -188,8 +191,8 @@ class ProductController extends Controller
             $product->sectors = $request->get('sectors');
             $product->producer = $request->get('producer');
             $product->other_materials = $request->get('other_materials');
-            $product->price = $request->get('price');
-            $product->price_promotional = $request->get('price_promotional');
+            $product->price = isset($price) ? str_replace(",", "", $price) : null;
+            $product->price_promotional = isset($price_promotional) ? str_replace(",", "", $price_promotional) : null;
             $product->pricing = $pricing;
             $product->describe=$request->get('describe');
             $product->why_choose_us=$request->get('why_choose_us');
