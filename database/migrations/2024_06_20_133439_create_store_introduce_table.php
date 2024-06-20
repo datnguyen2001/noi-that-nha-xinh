@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('category', function (Blueprint $table) {
+        Schema::create('store_introduce', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug');
-            $table->integer('parent_id')->default(0);
-            $table->integer('type')->default(1)->comment('1 là nội thất gỗ óc chó, 2 là nội thất tân cổ điển, 3 là phòng thờ');
+            $table->string('name')->nullable();
+            $table->string('title')->nullable();
+            $table->string('src')->nullable();
+            $table->string('link_video')->nullable();
+            $table->longText('describe')->nullable();
             $table->longText('content')->nullable();
             $table->timestamps();
         });
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('category');
+        Schema::dropIfExists('store_introduce');
     }
 };

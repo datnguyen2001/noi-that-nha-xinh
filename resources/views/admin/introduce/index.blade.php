@@ -1,5 +1,5 @@
 @extends('admin.layout.index')
-@section('title', 'Cài đặt')
+@section('title', 'Giới thiệu')
 
 @section('style')
 
@@ -10,28 +10,28 @@
         <div class="">
             <h1 class="h3 mb-4 text-gray-800">{{$titlePage}}</h1>
             <hr>
-            <form action="{{ route('admin.setting.update') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.introduce.update') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
-                    <div class="col-3">Tiêu đề header:</div>
+                    <div class="col-3">Tên cửa hàng giới thiệu:</div>
                     <div class="col-8">
-                        <input class="form-control" name="name_header" value="{{@$data->name_header}}" type="text">
+                        <input class="form-control" name="name" value="{{@$data->name}}" type="text" required>
                     </div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-3">Tiêu đề footer:</div>
+                    <div class="col-3">Tiêu đề:</div>
                     <div class="col-8">
-                        <input class="form-control" name="name_footer" value="{{@$data->name_footer}}" type="text">
+                        <input class="form-control" name="title" value="{{@$data->title}}" type="text" required>
                     </div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-3">Logo :</div>
+                    <div class="col-3">Hình ảnh :</div>
                     <div class="col-8">
-                        @if(@$data->logo != null)
+                        @if(@$data->src != null)
                             <div class="form-control position-relative div-parent" style="padding-top: 50%">
                                 <div class="position-absolute w-100 h-100 div-file" style="top: 0; left: 0;z-index: 10">
                                     <button type="button" class="position-absolute clear border-0 bg-danger p-0 d-flex justify-content-center align-items-center" style="top: -10px;right: -10px;width: 30px;height: 30px;border-radius: 50%"><i class="bi bi-x-lg text-white"></i></button>
-                                    <img src="{{asset(@$data->logo)}}" class="w-100 h-100" style="object-fit: cover">
+                                    <img src="{{asset(@$data->src)}}" class="w-100 h-100" style="object-fit: cover">
                                 </div>
                             </div>
                         @else
@@ -44,62 +44,29 @@
                     </div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-3">Hotline :</div>
+                    <div class="col-3">Video :</div>
                     <div class="col-8">
-                        <input class="form-control" name="hotline" value="{{@$data->hotline}}" type="number" >
+                        <input class="form-control" name="link_video" value="{{@$data->link_video}}" type="text" required>
                     </div>
                 </div>
-                <div class="row mt-3">
-                    <div class="col-3">Số điện thoại :</div>
-                    <div class="col-8">
-                        <input class="form-control" name="phone" value="{{@$data->phone}}" type="number" >
+                <div class="card mt-3">
+                    <div class="card-header bg-info text-white">
+                        Mô tả
+                    </div>
+                    <div class="card-body mt-2">
+                        <textarea name="describe" class="form-control" rows="10" required>{{@$data->describe}}</textarea>
                     </div>
                 </div>
-                <div class="row mt-3">
-                    <div class="col-3">Email :</div>
-                    <div class="col-8">
-                        <input class="form-control" name="email" value="{{@$data->email}}" type="text" >
+                <div class="card mt-3">
+                    <div class="card-header bg-info text-white">
+                        Nội dung
+                    </div>
+                    <div class="card-body mt-2">
+                        <textarea name="content" class="form-control" id="content" required>{!! @$data->content !!}</textarea>
                     </div>
                 </div>
-                <div class="row mt-3">
-                    <div class="col-3">Website :</div>
-                    <div class="col-8">
-                        <input class="form-control" name="website" value="{{@$data->website}}" type="text" >
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-3">Số điện thoại zalo :</div>
-                    <div class="col-8">
-                        <input class="form-control" name="zalo" value="{{@$data->zalo}}" type="number" >
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-3">Ảnh địa chỉ :</div>
-                    <div class="col-8">
-                        @if(@$data->image_address != null)
-                            <div class="form-control position-relative div-parent2" style="padding-top: 50%">
-                                <div class="position-absolute w-100 h-100 div-file2" style="top: 0; left: 0;z-index: 10">
-                                    <button type="button" class="position-absolute clear2 border-0 bg-danger p-0 d-flex justify-content-center align-items-center" style="top: -10px;right: -10px;width: 30px;height: 30px;border-radius: 50%"><i class="bi bi-x-lg text-white"></i></button>
-                                    <img src="{{asset(@$data->image_address)}}" class="w-100 h-100" style="object-fit: cover">
-                                </div>
-                            </div>
-                        @else
-                            <div class="form-control position-relative" style="padding-top: 50%">
-                                <button type="button" class="position-absolute border-0 bg-transparent select-image2" style="top: 50%;left: 50%;transform: translate(-50%,-50%)">
-                                    <i style="font-size: 30px" class="bi bi-download"></i>
-                                </button>
-                            </div>
-                        @endif
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-3">Link địa chỉ map :</div>
-                    <div class="col-8">
-                        <input class="form-control" name="link_address" value="{{@$data->link_address}}" type="text" >
-                    </div>
-                </div>
+
                 <input type="file" name="file" accept="image/x-png,image/gif,image/jpeg" hidden>
-                <input type="file" name="image_address" accept="image/x-png,image/gif,image/jpeg" hidden>
                 <button type="submit" class="btn btn-primary">Lưu</button>
             </form>
         </div>
@@ -107,6 +74,14 @@
     </main>
 @endsection
 @section('script')
+    <script src="//cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script>
+    <script type="text/javascript">
+        CKEDITOR.replace('content', {
+            filebrowserUploadUrl: "{{route('admin.ckeditor.image-upload', ['_token' => csrf_token() ])}}",
+            filebrowserUploadMethod: 'form',
+            height:'700px'
+        });
+    </script>
     <script>
         let parent;
         $(document).on("click", ".select-image", function () {

@@ -45,6 +45,7 @@ class CategoryController extends Controller
                 'slug' => Str::slug($request->get('title')),
                 'parent_id'=>$request->get('parent_id'),
                 'type'=>$request->get('type'),
+                'content'=>$request->get('content'),
             ]);
             $category->save();
 
@@ -88,6 +89,7 @@ class CategoryController extends Controller
             $category->slug = Str::slug($request->get('slug'));
             $category->parent_id = $request->get('parent_id');
             $category->type = $request->get('type');
+            $category->content = $request->get('content');
             $category->save();
 
             return redirect()->route('admin.category.index')->with(['success' => 'Cập nhật dữ liệu thành công']);
