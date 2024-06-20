@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('design_unit')->nullable();
             $table->string('total_construction_area')->nullable();
             $table->string('year_implementation')->nullable();
-            $table->string('src');
+            $table->longText('src');
             $table->integer('display')->default(1);
             $table->timestamps();
         });
