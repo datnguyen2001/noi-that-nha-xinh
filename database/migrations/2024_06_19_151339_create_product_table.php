@@ -29,6 +29,7 @@ return new class extends Migration
             $table->longText('describe')->nullable();
             $table->longText('why_choose_us')->nullable();
             $table->integer('display')->default(1);
+            $table->integer('is_sale')->default(0);
             $table->timestamps();
         });
     }

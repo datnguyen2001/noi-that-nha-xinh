@@ -25,6 +25,7 @@ class ProductModel extends Model
         'pricing',
         'describe',
         'why_choose_us',
-        'display'
+        'display',
+        'is_sale'
     ];
 }

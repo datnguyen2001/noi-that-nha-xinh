@@ -173,6 +173,16 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row mt-3">
+                        <div class="col-3">Sản phẩm sale :</div>
+                        <div class="col-8">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" name="is_sale" @if($data->is_sale == 1) checked @endif type="checkbox"
+                                       id="flexSwitchCheckChecked">
+                                <label class="form-check-label" for="flexSwitchCheckChecked">Sale </label>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row mt-5">
                         <div class="col-12 d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary mx-3">Tạo</button>

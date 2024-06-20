@@ -19,6 +19,22 @@ return [
             'number' => 2
         ],
         [
+            'name' => 'order',
+            'title' => 'Quản lý đơn hàng',
+            'icon' => 'bi bi-grid',
+            'route' => 'admin.order',
+            'submenu' => [],
+            'number' => 10
+        ],
+        [
+            'name' => 'information',
+            'title' => 'Đăng ký nhận thông tin',
+            'icon' => 'bi bi-grid',
+            'route' => 'admin.information',
+            'submenu' => [],
+            'number' => 10
+        ],
+        [
             'name' => 'category',
             'title' => 'Danh mục',
             'icon' => 'bi bi-grid',
@@ -119,6 +135,14 @@ return [
             'route' => 'admin.customer_support.index',
             'submenu' => [],
             'number' => 9
+        ],
+        [
+            'name' => 'introduce',
+            'title' => 'Giới thiệu cửa hàng',
+            'icon' => 'bi bi-grid',
+            'route' => 'admin.introduce.index',
+            'submenu' => [],
+            'number' => 10
         ],
 ]
 ];

@@ -14,6 +14,7 @@ use \App\Http\Controllers\admin\CommentController;
 use \App\Http\Controllers\admin\CategoryController;
 use \App\Http\Controllers\admin\ProductController;
 use \App\Http\Controllers\admin\SupportController;
+use \App\Http\Controllers\admin\IntroduceController;
 
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
@@ -127,6 +128,14 @@ Route::middleware('check-admin-auth')->group(function () {
         Route::post('update/{id}', [SupportController::class, 'update'])->name('update');
         Route::get('delete/{id}', [SupportController::class, 'delete']);
     });
+
+    Route::prefix('introduce')->name('introduce.')->group(function () {
+        Route::get('', [IntroduceController::class, 'index'])->name('index');
+        Route::post('update', [IntroduceController::class, 'save'])->name('update');
+    });
+
+    Route::get('information', [DashboardController::class, 'information'])->name('information');
+    Route::get('order', [DashboardController::class, 'order'])->name('order');
 
 });
 

@@ -68,6 +68,11 @@ class ProductController extends Controller
             }else{
                 $pricing = 0;
             }
+            if ($request->get('is_sale') == 'on'){
+                $sale = 1;
+            }else{
+                $sale = 0;
+            }
 
             $product = new ProductModel([
                 'name' => $request->get('title'),
@@ -86,6 +91,7 @@ class ProductController extends Controller
                 'why_choose_us'=>$request->get('why_choose_us'),
                 'src' => $imagePath,
                 'display' => $display,
+                'is_sale' => $sale,
             ]);
             $product->save();
             $this->add_img_product($request, $product->id);
@@ -168,6 +174,11 @@ class ProductController extends Controller
             }else{
                 $pricing = 0;
             }
+            if ($request->get('is_sale') == 'on'){
+                $sale = 1;
+            }else{
+                $sale = 0;
+            }
             $product->name = $request->get('title');
             $product->slug = Str::slug($request->get('title'));
             $product->category_id = $category_id;
@@ -183,6 +194,7 @@ class ProductController extends Controller
             $product->describe=$request->get('describe');
             $product->why_choose_us=$request->get('why_choose_us');
             $product->display = $display;
+            $product->is_sale = $sale;
             $product->save();
             $this->add_img_product($request, $product->id);
             return redirect()->route('admin.product.index')->with(['success' => 'Cập nhật dữ liệu thành công']);

@@ -38,6 +38,14 @@
                             </select>
                         </div>
                     </div>
+                    <div class="card mt-3">
+                        <div class="card-header bg-info text-white">
+                            Nội dung
+                        </div>
+                        <div class="card-body mt-2">
+                            <textarea name="content" class="form-control" id="content" required></textarea>
+                        </div>
+                    </div>
                     <div class="row mt-5">
                         <div class="col-3"></div>
                         <div class="col-8 ">
@@ -52,5 +60,12 @@
     </main><!-- End #main -->
 @endsection
 @section('script')
-
+    <script src="//cdn.ckeditor.com/4.18.0/full/ckeditor.js"></script>
+    <script type="text/javascript">
+        CKEDITOR.replace('content', {
+            filebrowserUploadUrl: "{{route('admin.ckeditor.image-upload', ['_token' => csrf_token() ])}}",
+            filebrowserUploadMethod: 'form',
+            height:'700px'
+        });
+    </script>
 @endsection
