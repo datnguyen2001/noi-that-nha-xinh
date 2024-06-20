@@ -20,7 +20,7 @@ class CheckAdminAuth
     {
         if(!Auth::guard('admin')->check())
         {
-            return redirect()->route('admin.login')->with(['alert'=>'danger', 'message' => 'Vui lòng đăng nhập để tiếp tục']);
+            return redirect()->route('admin.login')->with(['error'=>'Vui lòng đăng nhập để tiếp tục']);
         }
         return $next($request);
     }

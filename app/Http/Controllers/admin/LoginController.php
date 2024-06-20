@@ -21,7 +21,7 @@ class LoginController extends Controller
         $check = AdminModel::where('phone', $bodyData['username'])
             ->exists();
         if (!$check) {
-            return redirect()->route('admin.login')->with(['alert'=>'danger', 'message' => 'Số điện thoại không tồn tại']);
+            return redirect()->route('admin.login')->with(['error'=>'Số điện thoại không tồn tại']);
         }
         $dataAttemptAdmin = [
             'phone' => $bodyData['username'],
@@ -30,7 +30,7 @@ class LoginController extends Controller
         if (Auth::guard('admin')->attempt($dataAttemptAdmin)) {
             return redirect()->route('admin.index');
         }
-        return redirect()->route('admin.login')->with(['alert'=>'danger', 'message' => 'Tài khoản hoặc mật khẩu không chính xác']);
+        return redirect()->route('admin.login')->with(['error'=>'Tài khoản hoặc mật khẩu không chính xác']);
     }
 
     public function logout()
@@ -38,7 +38,7 @@ class LoginController extends Controller
         Auth::guard('admin')->logout();
         return redirect()
             ->route('admin.login')
-            ->with(['alert' => 'success', 'message' => 'Đăng xuất thành công']);
+            ->with(['success' => 'Đăng xuất thành công']);
     }
 
 }
