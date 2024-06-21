@@ -96,4 +96,8 @@ class HomeController extends Controller
     {
         return view('web.product-details.index');
     }
+    public function khuyenMaiDetails()
+    {
+        return view('web.khuyen-mai-details.index');
+    }
 }
