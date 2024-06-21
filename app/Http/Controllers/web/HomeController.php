@@ -53,8 +53,13 @@ class HomeController extends Controller
             $headers->product = ProductModel::where('display',1)->whereIn('category_id',$category_id)->orderBy('created_at','desc')->take(6)->get();
         }
         $project_category = ProjectModel::get();
-        $post_project = PostProjectModel::where('project_id',$project_category[0]->id)->where('display',1)->orderBy('created_at','desc')->take(8)->get();
-        $post_project_2 = PostProjectModel::where('project_id',$project_category[1]->id)->where('display',1)->orderBy('created_at','desc')->take(8)->get();
+        if (!empty($project_category) && isset($project_category[0])) {
+            $post_project = PostProjectModel::where('project_id',$project_category[0]->id)->where('display',1)->orderBy('created_at','desc')->take(8)->get();
+            $post_project_2 = PostProjectModel::where('project_id',$project_category[1]->id)->where('display',1)->orderBy('created_at','desc')->take(8)->get();
+        } else {
+            $post_project = collect();
+            $post_project_2 = collect();
+        }
         $video = VideoModel::where('display',1)->orderBy('created_at','desc')->take(6)->get();
         $comment = CommentModel::where('display',1)->orderBy('created_at','desc')->take(6)->get();
         $collection = PostCollectionModel::where('display',1)->orderBy('created_at','desc')->take(8)->get();
@@ -91,5 +96,13 @@ class HomeController extends Controller
     public function phongCachNoiThat()
     {
         return view('web.phong-cach-noi-that.index');
+    }
+    public function productDetails()
+    {
+        return view('web.product-details.index');
+    }
+    public function khuyenMaiDetails()
+    {
+        return view('web.khuyen-mai-details.index');
     }
 }
