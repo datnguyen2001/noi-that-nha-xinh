@@ -34,6 +34,7 @@ use App\Models\StoreIntroduceModel;
 use App\Models\StylingImageModel;
 use App\Models\StylingModel;
 use App\Models\StylingProductModel;
+use App\Models\SupportModel;
 use App\Models\VideoModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -104,5 +105,16 @@ class HomeController extends Controller
     public function khuyenMaiDetails()
     {
         return view('web.khuyen-mai-details.index');
+    }
+    public function supportSlug($slug)
+    {
+        $supportDetails = SupportModel::where('slug', $slug)->firstOrFail();
+
+        return view('web.support-customer.index', compact('supportDetails'));
+    }
+    public function gioiThieu()
+    {
+        $introduce = StoreIntroduceModel::first();
+        return view('web.home.partials.gioi-thieu', compact('introduce'));
     }
 }

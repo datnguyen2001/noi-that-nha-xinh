@@ -19,8 +19,9 @@ class ProductController extends Controller
         $page_menu = 'product';
         $page_sub = null;
         $listData = ProductModel::orderBy('created_at', 'desc')->paginate(15);
-        foreach ($listData as $val){
-            $val->name_category = CategoryModel::find($val->category_id)->name;
+        foreach ($listData as $val) {
+            $category = CategoryModel::find($val->category_id);
+            $val->name_category = $category ? $category->name : 'Chưa có tên';
         }
 
         return view('admin.product.index', compact('titlePage', 'page_menu', 'page_sub', 'listData'));

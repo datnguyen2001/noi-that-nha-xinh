@@ -13,4 +13,8 @@ class ProjectImageModel extends Model
         'post_project_id',
         'src'
     ];
+    public function project()
+    {
+        return $this->belongsTo(ProjectModel::class, 'post_project_id');
+    }
 }

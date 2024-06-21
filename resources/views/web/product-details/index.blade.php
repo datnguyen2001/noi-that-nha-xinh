@@ -20,7 +20,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="main_content__product mb-5">
+                                    <div class="main_content__product mb-5" style="padding: 0.625rem;">
                                         <div class="woocommerce-tabs wc-tabs-wrapper">
                                             @include('web.product-details.partials.content')
                                         </div>
@@ -43,7 +43,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body text-center">
-                <img id="modalImage" src="{{asset('assets/images/sofa.png')}}" class="img-fluid" alt="Sofa gỗ óc chó tích hợp ngăn để đồ">
+                <img id="modalImage" src="{{$productDetails->src}}" class="img-fluid" alt="Sofa gỗ óc chó tích hợp ngăn để đồ">
             </div>
         </div>
     </div>

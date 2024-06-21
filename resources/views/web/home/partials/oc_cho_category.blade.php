@@ -14,14 +14,14 @@
             </div>
                 @endforeach
         </div>
-        <div class="tab-panels">
+        <div class="tab-panels" style="margin-top: 30px">
             <div class="sh-product-shortcode column-3">
                 <ul class="row list-products d-flex flex-wrap">
                     @foreach($val->product as $pro_cate1)
                     <li class="6800 product type-product post-6799 status-publish first instock product_cat-phong-khach-tan-co-dien-ha-anh product_cat-sofa-tan-co-dien has-post-thumbnail shipping-taxable product-type-simple col-4">
                         <div class="wrap-product">
                             <div class="image-product">
-                                <a class="img hover-zoom" href="https://goocchohaanh.com/product/sofa-go-oc-cho-bo-roma-01/" title="SOFA GỖ ÓC CHÓ ROMA 01">
+                                <a class="img hover-zoom" href="{{route('product-detail', $pro_cate1->slug)}}" title="SOFA GỖ ÓC CHÓ ROMA 01">
                                     <noscript><img width="100%" height="100%"
                                                    alt="{{$pro_cate1->name}}" decoding="async"
                                                    data-srcset="{{asset($pro_cate1->src)}}"
@@ -41,7 +41,7 @@
                             </div>
                             <h3 class="woocommerce-loop-product__title">
                                 <a class="img hover-zoom"
-                                   href="https://goocchohaanh.com/product/sofa-go-oc-cho-bo-roma-01/"
+                                   href="{{route('product-detail', $pro_cate1->slug)}}"
                                    title="{{$pro_cate1->name}}">{{$pro_cate1->name}}
                                 </a>
                             </h3>

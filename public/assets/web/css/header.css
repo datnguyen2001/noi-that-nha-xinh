@@ -319,7 +319,8 @@
     display: flex;
     flex-wrap: wrap;
     row-gap: 1rem;
-    justify-content: center
+    justify-content: center;
+    list-style: none;
 }
 
 .list-categories__wrap .list-categories__item a {

@@ -25,4 +25,11 @@ class BoSuuTapController extends Controller
         $post_collection = PostCollectionModel::where('collection_id',$collection->id)->where('display',1)->orderBy('created_at','desc')->get();
         return view('web.bo-suu-tap.index2',compact('banner_collection','category_collection','post_collection','collection'));
     }
+
+    public function boSuuTapDetails($slug)
+    {
+        $detailCollection = PostCollectionModel::where('slug',$slug)->with('images')->first();
+
+        return view('web.bo-suu-tap.bo-suu-tap-details', compact('detailCollection'));
+    }
 }

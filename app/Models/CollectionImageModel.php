@@ -13,4 +13,8 @@ class CollectionImageModel extends Model
         'post_collection_id',
         'src'
     ];
+    public function collection()
+    {
+        return $this->belongsTo(PostCollectionModel::class, 'post_collection_id');
+    }
 }

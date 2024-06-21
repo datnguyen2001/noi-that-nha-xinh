@@ -15,7 +15,7 @@
                                             <div class="item-post">
                                                 <div class="box_post_list_cat_post_1">
                                                     <a class="d-block img"
-                                                       href="https://goocchohaanh.com/anh-huan-biet-thu-thanh-pho-lao-cai/"
+                                                       href="{{route('du-an-details', $post_project2->slug)}}"
                                                        title="{{$post_project2->name}}">
                                                         <noscript>
                                                             <img width="100%" height="100%"
@@ -36,7 +36,7 @@
                                                              class="attachment- size- wp-post-image lazyloaded"
                                                              src="{{asset($post_project2->src)}}"/></a>
                                                     <h3 class="entry-title">
-                                                        <a href="https://goocchohaanh.com/anh-huan-biet-thu-thanh-pho-lao-cai/" title="{{$post_project2->name}}">
+                                                        <a href="{{route('du-an-details', $post_project2->slug)}}" title="{{$post_project2->name}}">
                                                             {{$post_project2->name}}
                                                         </a>
                                                     </h3>
