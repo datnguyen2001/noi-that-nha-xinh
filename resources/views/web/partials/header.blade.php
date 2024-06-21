@@ -19,10 +19,10 @@
 {{--                </a>--}}
                 <div class="row align-items-center">
                     <div class="col-md-3">
-                        <div class="camera_block mb-5">
-{{--                            <a href="{{route('cameraVideo')}}">Camera 360--}}
+                        <div class="camera_block">
+                            <a href="{{route('cameraVideo')}}">Camera 360
 {{--                                <i class="fas fa fa-globe"></i>--}}
-{{--                            </a>--}}
+                            </a>
                         </div>
                         <div class="lien_he">
                             <a href="{{route('lien-he')}}">
@@ -109,19 +109,19 @@
                                     <ul class="sub-menu">
                                         <li id="menu-item-11246"
                                             class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11246">
-                                            <a href="{{ route('noi-that-go-oc-cho.phong-khach.sofa') }}">Sofa Gỗ Óc Chó</a>
+                                            <a href="{{ route('noi-that-go-oc-cho.san-pham') }}">Sofa Gỗ Óc Chó</a>
                                         </li>
                                         <li id="menu-item-11247"
                                             class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11247">
-                                            <a href="{{ route('noi-that-go-oc-cho.phong-khach.ban-tra') }}">Bàn Trà Gỗ
+                                            <a href="{{ route('noi-that-go-oc-cho.san-pham') }}">Bàn Trà Gỗ
                                                 Óc Chó</a></li>
                                         <li id="menu-item-11248"
                                             class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11248">
-                                            <a href="{{ route('noi-that-go-oc-cho.phong-khach.ke-tivi') }}">Kệ Tivi Gỗ Óc
+                                            <a href="{{ route('noi-that-go-oc-cho.san-pham') }}">Kệ Tivi Gỗ Óc
                                                 Chó</a></li>
                                         <li id="menu-item-11249"
                                             class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11249">
-                                            <a href="{{ route('noi-that-go-oc-cho.phong-khach.ke-trang-tri') }}">Kệ Trang
+                                            <a href="{{ route('noi-that-go-oc-cho.san-pham') }}">Kệ Trang
                                                 Trí Gỗ Óc Chó</a></li>
                                     </ul>
                                 </li>
@@ -129,16 +129,16 @@
                                     <a href="{{ route('noi-that-go-oc-cho.phong-bep.index') }}">Phòng bếp gỗ óc chó</a>
                                     <ul class="sub-menu">
                                         <li id="menu-item-11255" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11255">
-                                            <a href="{{ route('noi-that-go-oc-cho.phong-bep.ban-ghe-an') }}">Bàn Ghế Ăn Gỗ Óc Chó</a>
+                                            <a href="{{ route('noi-that-go-oc-cho.san-pham') }}">Bàn Ghế Ăn Gỗ Óc Chó</a>
                                         </li>
                                         <li id="menu-item-11256" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11256">
-                                            <a href="{{ route('noi-that-go-oc-cho.phong-bep.tu-bep') }}">Tủ Bếp Gỗ Óc Chó</a>
+                                            <a href="{{ route('noi-that-go-oc-cho.san-pham') }}">Tủ Bếp Gỗ Óc Chó</a>
                                         </li>
                                         <li id="menu-item-11257" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11257">
-                                            <a href="{{ route('noi-that-go-oc-cho.phong-bep.quay-bar') }}">Quầy Bar Gỗ Óc Chó</a>
+                                            <a href="{{ route('noi-that-go-oc-cho.san-pham') }}">Quầy Bar Gỗ Óc Chó</a>
                                         </li>
                                         <li id="menu-item-11258" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11258">
-                                            <a href="{{ route('noi-that-go-oc-cho.phong-bep.tu-ruou') }}">Tủ Rượu Gỗ Óc Chó</a>
+                                            <a href="{{ route('noi-that-go-oc-cho.san-pham') }}">Tủ Rượu Gỗ Óc Chó</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -146,13 +146,13 @@
                                     <a href="{{ route('noi-that-go-oc-cho.phong-ngu.index') }}">Phòng ngủ gỗ óc chó</a>
                                     <ul class="sub-menu">
                                         <li id="menu-item-11251" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11251">
-                                            <a href="{{ route('noi-that-go-oc-cho.phong-ngu.giuong-ngu') }}">Giường Ngủ Gỗ Óc Chó</a>
+                                            <a href="{{ route('noi-that-go-oc-cho.san-pham') }}">Giường Ngủ Gỗ Óc Chó</a>
                                         </li>
                                         <li id="menu-item-11252" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11252">
-                                            <a href="{{ route('noi-that-go-oc-cho.phong-ngu.ban-trang-diem') }}">Bàn Trang Điểm Gỗ Óc Chó</a>
+                                            <a href="{{ route('noi-that-go-oc-cho.san-pham') }}">Bàn Trang Điểm Gỗ Óc Chó</a>
                                         </li>
                                         <li id="menu-item-11253" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11253">
-                                            <a href="{{ route('noi-that-go-oc-cho.phong-ngu.tu-quan-ao') }}">Tủ Áo Gỗ Óc Chó</a>
+                                            <a href="{{ route('noi-that-go-oc-cho.san-pham') }}">Tủ Áo Gỗ Óc Chó</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -231,10 +231,10 @@
                             <a href="{{route('du-an.index')}}">Dự án</a>
                             <ul class="sub-menu">
                                 <li id="menu-item-1825" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1825">
-                                    <a href="{{route('du-an.du-an-thiet-ke')}}">Dự án thiết kế</a>
+                                    <a href="{{route('du-an.details')}}">Dự án thiết kế</a>
                                 </li>
                                 <li id="menu-item-1826" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1826">
-                                    <a href="{{route('du-an.du-an-thi-cong')}}">Dự án thi công</a>
+                                    <a href="{{route('du-an.details')}}">Dự án thi công</a>
                                 </li>
                             </ul>
                         </li>

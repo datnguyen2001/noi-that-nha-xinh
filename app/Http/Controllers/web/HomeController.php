@@ -70,4 +70,26 @@ class HomeController extends Controller
     {
         return view ('web.tin-tuc.index');
     }
+    public function hotSale(){
+        return view('web.hot-sale.index');
+    }
+    public function cameraVideo() {
+        return view('web.camera-video.index');
+    }
+    public function contact() {
+        return view('web.contact.index');
+    }
+    public function introduction()
+    {
+        return view('web.introduction.index');
+    }
+    public function tinTuc()
+    {
+        return view ('web.tin-tuc.index');
+    }
+
+    public function phongCachNoiThat()
+    {
+        return view('web.phong-cach-noi-that.index');
+    }
 }

@@ -73,7 +73,7 @@
                 </div>
             </div>
             <div class="col-lg-8 order-1 order-lg-2">
-                <div class="sh-product-shortcode setofproduct-list slick-carousel-collection">
+                <div class="sh-product-shortcode setofproduct-list slick-carousel-bo-suu-tap">
                     <div class="product type-product product-10988">
                         <div class="wrap-product">
                             <div class="image-product">
