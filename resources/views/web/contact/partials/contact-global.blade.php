@@ -49,10 +49,6 @@
                             <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
                             <form action="/lien-he/#wpcf7-f4737-p823-o1" method="post" class="wpcf7-form init" aria-label="Form liên hệ" novalidate="novalidate" data-status="init">
                                 <div class="row">
-{{--                                    <div class="col-md-7 col-12 bg-img-form d-none">--}}
-{{--                                        <p><img data-src='https://goocchohaanh.com/wp-content/uploads/2022/07/tivi-treo-tuong-cao-bao-nhieu-la-hop-ly.jpg' class='lazyload' src='data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' />--}}
-{{--                                        </p>--}}
-{{--                                    </div>--}}
                                     <div class="col-md-12 col-12 form-popup">
                                         <h4 class="modal-title">Đăng ký nhận thông tin
                                         </h4>

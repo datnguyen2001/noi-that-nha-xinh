@@ -27,6 +27,7 @@ Route::get('/hot-sale' , [HomeController::class, 'hotSale'])->name('hot-sale');
 
 Route::group(['prefix' => 'noi-that-go-oc-cho', 'as' => 'noi-that-go-oc-cho.'], function () {
     Route::get('/', [NoiThatGoOcChoController::class, 'index'])->name('home');
+    Route::get('/san-pham', [NoiThatGoOcChoController::class, 'sanPham'])->name('san-pham');
 
     Route::group(['prefix' => 'phong-khach', 'as' => 'phong-khach.'], function () {
         Route::get('/', [NoiThatGoOcChoController::class, 'phongKhach'])->name('index');
@@ -88,6 +89,8 @@ Route::group(['prefix' => 'phong-tho', 'as' => 'phong-tho.'], function () {
 
 Route::group(['prefix' => 'du-an', 'as' => 'du-an.'], function () {
     Route::get('/', [DuAnController::class, 'duAn'])->name('index');
+    Route::get('/details', [DuAnController::class, 'details'])->name('details');
+
     Route::get('/du-an-thiet-ke-go-oc-cho', [DuAnController::class, 'duAnThietKe'])->name('du-an-thiet-ke');
     Route::get('/du-an-thi-cong-go-oc-cho', [DuAnController::class, 'duAnThiCong'])->name('du-an-thi-cong');
 });
@@ -101,6 +104,8 @@ Route::group(['prefix' => 'bo-suu-tap', 'as' => 'bo-suu-tap.'], function () {
 
 Route::get('/tin-tuc' , [HomeController::class, 'tinTuc'])->name('tin-tuc');
 Route::get('/gioi-thieu', [HomeController::class, 'gioiThieu'])->name('gioi-thieu');
+Route::get('/phong-cach-noi-that-go-oc-cho', [HomeController::class, 'phongCachNoiThat'])->name('phong-cach-noi-that');
+
 
 Route::middleware('auth')->group(function () {
 
