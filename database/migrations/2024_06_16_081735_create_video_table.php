@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('total_construction_area')->nullable();
             $table->string('year_implementation')->nullable();
             $table->longText('src');
+            $table->string('image')->nullable();
             $table->integer('display')->default(1);
             $table->timestamps();
         });

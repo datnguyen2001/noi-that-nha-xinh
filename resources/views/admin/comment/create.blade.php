@@ -105,6 +105,7 @@
             }
         }
         $(document).on("click", "button.clear", function () {
+            parent = $(this).closest(".div-parent");
             $(".div-file").remove();
             let html = '<button type="button" class="position-absolute border-0 bg-transparent select-image" style="top: 50%;left: 50%;transform: translate(-50%,-50%)">\n' +
                 '                                    <i style="font-size: 30px" class="bi bi-download"></i>\n' +

@@ -9,10 +9,13 @@ use App\Models\AlbumModel;
 use App\Models\BannerModel;
 use App\Models\Category;
 use App\Models\CategoryModel;
+use App\Models\CollectionImageModel;
 use App\Models\CollectionModel;
 use App\Models\CollectionProductModel;
+use App\Models\CommentModel;
 use App\Models\ContactUsModel;
 use App\Models\FooterBlog;
+use App\Models\PostCollectionModel;
 use App\Models\PostProjectModel;
 use App\Models\PostsModel;
 use App\Models\Product;
@@ -49,9 +52,12 @@ class HomeController extends Controller
         $project_category = ProjectModel::get();
         $post_project = PostProjectModel::where('project_id',$project_category[0]->id)->where('display',1)->orderBy('created_at','desc')->take(8)->get();
         $post_project_2 = PostProjectModel::where('project_id',$project_category[1]->id)->where('display',1)->orderBy('created_at','desc')->take(8)->get();
+        $video = VideoModel::where('display',1)->orderBy('created_at','desc')->take(6)->get();
+        $comment = CommentModel::where('display',1)->orderBy('created_at','desc')->take(6)->get();
+        $collection = PostCollectionModel::where('display',1)->orderBy('created_at','desc')->take(8)->get();
 
         return view('web.home.index',compact('introduce','product_sale','category1','product_cate1','category2','product_cate2',
-        'post_project','project_category','post_project_2'));
+        'post_project','project_category','post_project_2','video','comment','collection'));
     }
     public function hotSale(){
         return view('web.hot-sale.index');
