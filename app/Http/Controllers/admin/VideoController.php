@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\VideoModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class VideoController extends Controller
@@ -34,6 +35,13 @@ class VideoController extends Controller
     public function store (Request $request)
     {
         try{
+            $imagePath = null;
+            if ($request->hasFile('file')) {
+                $file = $request->file('file');
+                $imagePath = Storage::url($file->store('banner', 'public'));
+            }else{
+                return redirect()->back()->with(['error'=>'Vui lòng thêm hình ảnh để tiếp tục']);
+            }
             if ($request->get('display') == 'on'){
                 $display = 1;
             }else{
@@ -51,6 +59,7 @@ class VideoController extends Controller
                 'total_construction_area'=>$request->get('total_construction_area'),
                 'year_implementation'=>$request->get('year_implementation'),
                 'src'=>$request->get('src'),
+                'image' => $imagePath,
                 'display' => $display,
             ]);
             $video->save();
@@ -84,6 +93,14 @@ class VideoController extends Controller
     {
         try{
             $video = VideoModel::find($id);
+            if ($request->hasFile('file')) {
+                $file = $request->file('file');
+                $imagePath = Storage::url($file->store('banner', 'public'));
+                if (isset($video->image) && Storage::exists(str_replace('/storage', 'public', $video->image))) {
+                    Storage::delete(str_replace('/storage', 'public', $video->image));
+                }
+                $video->image = $imagePath;
+            }
             if ($request->get('display') == 'on'){
                 $display = 1;
             }else{

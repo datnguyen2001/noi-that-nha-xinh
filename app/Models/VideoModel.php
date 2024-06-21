@@ -21,6 +21,7 @@ class VideoModel extends Model
         'total_construction_area',
         'year_implementation',
         'src',
+        'image',
         'display'
     ];
 }
