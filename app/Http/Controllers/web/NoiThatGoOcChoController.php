@@ -11,5 +11,9 @@ class NoiThatGoOcChoController extends Controller
     {
         return view('web.noi-that-go-oc-cho.index');
     }
+    public function sanPham()
+    {
+        return view('web.noi-that-go-oc-cho.details.san-pham');
+    }
 }
 

@@ -50,4 +50,9 @@ class HomeController extends Controller
     {
         return view ('web.tin-tuc.index');
     }
+
+    public function phongCachNoiThat()
+    {
+        return view('web.phong-cach-noi-that.index');
+    }
 }
