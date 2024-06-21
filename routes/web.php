@@ -22,7 +22,7 @@ use \App\Http\Controllers\Web\HomeController;
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/camera-video' , [HomeController::class, 'cameraVideo'])->name('cameraVideo');
 Route::get('/lien-he' , [HomeController::class, 'contact'])->name('lien-he');
-Route::get('/gioi-thieu-cong-ty-noi-that-go-oc-cho-ha-anh' , [HomeController::class, 'introduction'])->name('introduction');
+Route::get('/video' , [HomeController::class, 'introduction'])->name('introduction');
 Route::get('/hot-sale' , [HomeController::class, 'hotSale'])->name('hot-sale');
 
 Route::group(['prefix' => 'noi-that-go-oc-cho', 'as' => 'noi-that-go-oc-cho.'], function () {

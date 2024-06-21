@@ -61,6 +61,7 @@ class VideoController extends Controller
                 'src'=>$request->get('src'),
                 'image' => $imagePath,
                 'display' => $display,
+                'selection'=>$request->get('selection'),
             ]);
             $video->save();
             return redirect()->route('admin.video.index')->with(['success' => 'Tạo mới dữ liệu thành công']);
@@ -118,6 +119,7 @@ class VideoController extends Controller
             $video->year_implementation = $request->get('year_implementation');
             $video->src = $request->get('src');
             $video->display = $display;
+            $video->selection = $request->get('selection');
             $video->save();
             return redirect()->route('admin.video.index')->with(['success' => 'Cập nhật dữ liệu thành công']);
         }catch (\Exception $e){
