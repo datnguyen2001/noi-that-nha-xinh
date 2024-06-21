@@ -797,6 +797,11 @@ a.devvn_buy_now_style span {
     text-transform: none;
     margin: 2px 0 0;
 }
+.box-image-form, .chitietbaiviet {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
 @media only screen and (max-width: 849.98px) {
     .page-template-page-contact .page_contact {
         margin-top: 0
