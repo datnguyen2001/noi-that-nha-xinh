@@ -2,7 +2,7 @@
     <div class="project-wrap">
         <div class="container">
             <h2 class="heading">
-                <a title="Dự án thiết kế" href="{{route('du-an.du-an-thiet-ke')}}">{{$project_category[1]->name}}</a>
+                <a title="Dự án thiết kế" href="{{route('du-an.details',$project_category[1]->slug)}}">{{$project_category[1]->name}}</a>
             </h2>
             <div class="project-wrap__box">
                 <div class="row">

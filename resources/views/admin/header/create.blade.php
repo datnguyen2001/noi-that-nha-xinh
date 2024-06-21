@@ -7,35 +7,12 @@
         </div><!-- End Page Title -->
         <section class="section dashboard">
             <div class="bg-white p-4">
-                <form action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.header.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-3">Tên danh mục :</div>
                         <div class="col-8">
                             <input class="form-control" name="title" type="text" required>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <label class="col-sm-3 col-form-label">Danh mục cha</label>
-                        <div class="col-sm-8">
-                            <select class="form-select" name="parent_id"
-                                    aria-label="Default select example" required>
-                                <option value="0" selected>Làm danh mục cha</option>
-                                @foreach($category as $value)
-                                    <option class="bg-info" value="{{$value->id}}">{{$value->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <label class="col-sm-3 col-form-label">Thuộc loại</label>
-                        <div class="col-sm-8">
-                            <select class="form-select" name="type"
-                                    aria-label="Default select example" required>
-                                @foreach($header as $headers)
-                                <option class="bg-info" value="{{$headers->id}}">{{$headers->name}}</option>
-                                @endforeach
-                            </select>
                         </div>
                     </div>
                     <div class="card mt-3">
@@ -50,7 +27,7 @@
                         <div class="col-3"></div>
                         <div class="col-8 ">
                             <button type="submit" class="btn btn-primary">Tạo</button>
-                            <a href="{{route('admin.category.index')}}" class="btn btn-danger">Hủy</a>
+                            <a href="{{route('admin.header.index')}}" class="btn btn-danger">Hủy</a>
                         </div>
                     <input type="file" name="file" accept="image/x-png,image/gif,image/jpeg" hidden>
                     </div>

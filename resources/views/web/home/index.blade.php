@@ -3,15 +3,17 @@
 
 {{--content of page--}}
 @section('content')
+    @if(isset($bannerHome[0]))
     <div id="slider">
         <div class="slider-item">
             <noscript><img decoding="async" alt="img-slide" width="100%" height="100%"
-                           data-src="{{asset(@$bannerHome[0]->src)}}" class="lazyload"
-                           src="{{asset(@$bannerHome[0]->src)}}"/></noscript>
+                           data-src="{{asset($bannerHome[0]->src)}}" class="lazyload"
+                           src="{{asset($bannerHome[0]->src)}}"/></noscript>
             <img decoding="async" alt="img-slide" width="100%" height="100%"
-                 data-src="{{asset(@$bannerHome[0]->src)}}" class="lazyloaded"
-                 src="{{asset(@$bannerHome[0]->src)}}"/></div>
+                 data-src="{{asset($bannerHome[0]->src)}}" class="lazyloaded"
+                 src="{{asset($bannerHome[0]->src)}}"/></div>
     </div>
+    @endif
     <div id="content" class="site-content">
         <div class="container">
             <main id="main" class="site-main" role="main">
@@ -21,12 +23,16 @@
                 <section id="sale" class="sale-section home-section">
                     @include('web.home.partials.flash_sale')
                 </section>
+                @if(isset($header) && count($header)>0)
+                    @foreach($header as $val)
                 <section id="product-categories" class="product-categories product-goc home-section">
                     @include('web.home.partials.oc_cho_category')
                 </section>
-                <section id="product-categories2" class="product-categories product-tcd home-section">
-                    @include('web.home.partials.tan_co_dien_category')
-                </section>
+                    @endforeach
+                @endif
+{{--                <section id="product-categories2" class="product-categories product-tcd home-section">--}}
+{{--                    @include('web.home.partials.tan_co_dien_category')--}}
+{{--                </section>--}}
             </main>
         </div>
         <section id="banner_pc" class="home-section homepage-banner">

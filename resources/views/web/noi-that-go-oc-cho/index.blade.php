@@ -12,21 +12,19 @@
                             <span>Nội thất gỗ óc chó</span>
                         </h1>
                     </header>
+                    @if(isset($category))
                     <div class="list-categories tan_co 123">
                         <div class="container">
                             <div class="list-categories__wrap">
+                                @foreach($category as $categorys)
                                 <div class="list-categories__item">
-                                    <a class="d-block" href="https://goocchohaanh.com/phong-khach-go-oc-cho-dep/">Phòng Khách Gỗ Óc Chó</a>
+                                    <a class="d-block" href="https://goocchohaanh.com/phong-khach-go-oc-cho-dep/">{{$categorys->name}}</a>
                                 </div>
-                                <div class="list-categories__item">
-                                    <a class="d-block" href="https://goocchohaanh.com/phong-ngu-go-oc-cho-dep/">Phòng ngủ gỗ óc chó</a>
-                                </div>
-                                <div class="list-categories__item">
-                                    <a class="d-block" href="https://goocchohaanh.com/phong-bep-oc-cho/">Phòng bếp gỗ óc chó</a>
-                                </div>
+                               @endforeach
                             </div>
                         </div>
                     </div>
+                    @endif
                     @include('web.noi-that-go-oc-cho.partials.oc-cho-items')
                 </main>
             </div>

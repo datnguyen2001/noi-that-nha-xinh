@@ -9,15 +9,13 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <h5 class="card-title">{{$titlePage}}</h5>
                                 <a class="btn btn-success"
-                                   href="{{route('admin.category.create')}}">Thêm danh mục</a>
+                                   href="{{route('admin.header.create')}}">Thêm header</a>
                             </div>
                             <table class="table text-nowrap">
                                 <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">STT</th>
-                                    <th scope="col">Tên danh mục</th>
-                                    <th scope="col">Danh mục cha</th>
-                                    <th scope="col">Thuộc loại</th>
+                                    <th scope="col">Tên header</th>
                                     <th scope="col">...</th>
                                 </tr>
                                 </thead>
@@ -30,20 +28,14 @@
                                                 {{$value->name}}
                                             </td>
                                             <td>
-                                                {{$value->name_parent}}
-                                            </td>
-                                            <td>
-                                                    {{$value->name_header}}
-                                            </td>
-                                            <td>
                                                 <div class="d-flex">
-                                                    <a href="{{url('admin/category/edit/'.$value->id)}}"
+                                                    <a href="{{url('admin/header/edit/'.$value->id)}}"
                                                        class="btn btn-icon btn-light btn-hover-success btn-sm"
                                                        data-bs-toggle="tooltip" data-bs-placement="top" title=""
                                                        data-bs-original-title="Cập nhật">
                                                         <i class="bi bi-pencil-square "></i>
                                                     </a>
-                                                    <a href="{{url('admin/category/delete/'.$value->id)}}"
+                                                    <a href="{{url('admin/header/delete/'.$value->id)}}"
                                                        class="btn btn-delete btn-icon btn-light btn-sm"
                                                        data-bs-toggle="tooltip" data-bs-placement="top" title=""
                                                        data-bs-original-title="Xóa">

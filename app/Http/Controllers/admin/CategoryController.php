@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\CategoryModel;
+use App\Models\HeaderModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -18,6 +19,7 @@ class CategoryController extends Controller
         $listData = CategoryModel::orderBy('id', 'asc')->paginate(15);
         foreach ($listData as $val){
             $val->name_parent = CategoryModel::find($val->parent_id)->name??'Là danh mục cha';
+            $val->name_header = HeaderModel::find($val->type)->name??null;
         }
 
         return view('admin.category.index', compact('titlePage', 'page_menu', 'page_sub', 'listData'));
@@ -30,8 +32,9 @@ class CategoryController extends Controller
             $page_menu = 'category';
             $page_sub = null;
             $category = CategoryModel::where('parent_id',0)->get();
+            $header = HeaderModel::all();
 
-            return view('admin.category.create', compact('titlePage', 'page_menu', 'page_sub','category'));
+            return view('admin.category.create', compact('titlePage', 'page_menu', 'page_sub','category','header'));
         } catch (\Exception $e) {
             return back()->with(['error' => $e->getMessage()]);
         }
@@ -74,8 +77,9 @@ class CategoryController extends Controller
             $page_menu = 'category';
             $page_sub = null;
             $category = CategoryModel::where('parent_id',0)->get();
+            $header = HeaderModel::all();
 
-            return view('admin.category.edit', compact('titlePage', 'page_menu', 'page_sub', 'data','category'));
+            return view('admin.category.edit', compact('titlePage', 'page_menu', 'page_sub', 'data','category','header'));
         } catch (\Exception $exception) {
             return back()->with(['error' => $exception->getMessage()]);
         }

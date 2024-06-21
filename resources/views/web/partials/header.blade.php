@@ -229,14 +229,15 @@
                         </li>
                         <li id="menu-item-1600" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1600">
                             <a href="{{route('du-an.index')}}">Dự án</a>
+                            @if(isset($project) && count($project)>0)
                             <ul class="sub-menu">
+                                @foreach($project as $projects)
                                 <li id="menu-item-1825" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1825">
-                                    <a href="{{route('du-an.details')}}">Dự án thiết kế</a>
+                                    <a href="{{route('du-an.details',$projects->slug)}}">{{$projects->name}}</a>
                                 </li>
-                                <li id="menu-item-1826" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1826">
-                                    <a href="{{route('du-an.details')}}">Dự án thi công</a>
-                                </li>
+                                    @endforeach
                             </ul>
+                                @endif
                         </li>
                         <li id="menu-item-10996" class="menu-item menu-item-type-taxonomy menu-item-object-bst_type menu-item-10996">
                             <a href="{{route('bo-suu-tap.index')}}">Bộ sưu tập</a>
