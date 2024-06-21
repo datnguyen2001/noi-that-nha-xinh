@@ -5,18 +5,17 @@
                 <div class="row">
                     <div class="footer-widgets-area col-md-3">
                         <section id="text-5" class="widget widget_text">
-                            <h3 class="widget-title">NỘI THẤT HÀ ANH</h3>
+                            <h3 class="widget-title">{{@$setting->name_footer}}</h3>
                             <div class="textwidget">
                                 <p>
                                     <u>OFFICE &amp; SHOWROOM:<br/></u>
-                                    <a href="https://www.google.com/maps?cid=5469739591940285433" target="_blank" rel="nofollow noopener">
-                                        Tầng 3, Tòa An Phú, Đường Lê Trọng Tấn, Phường Dương Nội,
-                                        Quận Hà Đông, TP. Hà Nội.
+                                    <a rel="nofollow noopener">
+                                        {{@$contact_us->address_office}}
                                     </a>
                                 </p>
                                 <p>
                                     <u>NHÀ MÁY SẢN XUẤT:<br/></u>
-                                    Đồng Nhân (Trạm bơm đê Yên Nghĩa) &#8211; Đông La &#8211; Hoài Đức &#8211; Hà
+                                    {{@$contact_us->address_factory}}
                                 </p>
                             </div>
                         </section>
@@ -28,22 +27,22 @@
                                 <li>
                                     <i class="d-none flat flat-phone"></i>
                                     <span class="">Hotline:</span>
-                                    0902 261 386
+                                    {{@$setting->hotline}}
                                 </li>
                                 <li>
                                     <i class="d-none flat flat-phone"></i>
                                     <span class="">Số điện thoại:</span>
-                                    024 33 581 656
+                                    {{@$setting->phone}}
                                 </li>
                                 <li>
                                     <i class="d-none flat flat-mail"></i>
                                     <span class="">Email:</span>
-                                     info@noithathaanh.vn
+                                     {{@$setting->email}}
                                 </li>
                                 <li>
                                     <i class="d-none flat flat-global"></i>
                                     <span class="">Website:</span>
-                                    http://gooccho.giaodiendep.com
+                                    {{@$setting->website}}
                                 </li>
                             </ul>
                         </section>
@@ -73,24 +72,17 @@
                             <h3 class="widget-title">Hỗ trợ khách hàng</h3>
                             <div class="menu-ho-tro-khach-hang-container">
                                 <ul id="menu-ho-tro-khach-hang" class="menu">
+                                    @if(isset($support) && count($support)>0)
+                                        @foreach($support as $support_item)
                                     <li id="menu-item-426"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-426">
-                                        <a href="https://goocchohaanh.com/huong-dan-mua-hang/">Hướng dẫn mua hàng</a>
+                                        <a href="https://goocchohaanh.com/huong-dan-mua-hang/">{{$support_item->name}}</a>
                                     </li>
-                                    <li id="menu-item-429"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-429">
-                                        <a rel="privacy-policy" href="https://goocchohaanh.com/chinh-sach-bao-mat-thong-tin/">
-                                            Bảo mật thông tin
-                                        </a>
-                                    </li>
-                                    <li id="menu-item-428"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-428">
-                                        <a href="https://goocchohaanh.com/quy-dinh-va-chinh-sach/">
-                                            Quy định và chính sách</a>
-                                    </li>
+                                        @endforeach
+                                    @endif
                                     <li id="menu-item-5560"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5560">
-                                        <a href="https://goocchohaanh.com/lien-he/">Liên hệ</a>
+                                        <a href="{{route('lien-he')}}">Liên hệ</a>
                                     </li>
                                 </ul>
                             </div>
@@ -98,25 +90,25 @@
                     </div>
                     <div class="footer-widgets-area col-md-3">
                         <section id="media_image-10" class="widget widget_media_image">
-                            <a href="https://www.google.com/maps?cid=5469739591940285433">
+                            <a href="{{@$setting->link_address}}">
                                 <noscript>
                                     <img width="833" height="616" alt="" style="max-width: 100%; height: auto;"
                                                decoding="async"
-                                               data-srcset="https://goocchohaanh.com/wp-content/uploads/2024/04/noi-that-go-oc-cho-ha-anh.jpg 833w, https://goocchohaanh.com/wp-content/uploads/2024/04/noi-that-go-oc-cho-ha-anh-768x568.jpg 768w, https://goocchohaanh.com/wp-content/uploads/2024/04/noi-that-go-oc-cho-ha-anh-600x444.jpg 600w"
-                                               data-src="https://goocchohaanh.com/wp-content/uploads/2024/04/noi-that-go-oc-cho-ha-anh.jpg"
+                                               data-srcset="{{@$setting->image_address}}"
+                                               data-src="{{@$setting->image_address}}"
                                                data-sizes="(max-width: 833px) 100vw, 833px"
                                                class="image wp-image-11265  attachment-full size-full lazyload"
-                                               src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                               srcset="https://goocchohaanh.com/wp-content/uploads/2024/04/noi-that-go-oc-cho-ha-anh.jpg 833w, https://goocchohaanh.com/wp-content/uploads/2024/04/noi-that-go-oc-cho-ha-anh-768x568.jpg 768w, https://goocchohaanh.com/wp-content/uploads/2024/04/noi-that-go-oc-cho-ha-anh-600x444.jpg 600w"
+                                               src="{{@$setting->image_address}}"
+                                               srcset="{{@$setting->image_address}}"
                                                sizes="(max-width: 833px) 100vw, 833px"/></noscript>
                                 <img width="833" height="616" alt="" style="max-width: 100%; height: auto;"
                                      decoding="async"
-                                     data-srcset="https://goocchohaanh.com/wp-content/uploads/2024/04/noi-that-go-oc-cho-ha-anh.jpg 833w, https://goocchohaanh.com/wp-content/uploads/2024/04/noi-that-go-oc-cho-ha-anh-768x568.jpg 768w, https://goocchohaanh.com/wp-content/uploads/2024/04/noi-that-go-oc-cho-ha-anh-600x444.jpg 600w"
-                                     data-src="https://goocchohaanh.com/wp-content/uploads/2024/04/noi-that-go-oc-cho-ha-anh.jpg"
+                                     data-srcset="{{@$setting->image_address}}"
+                                     data-src="{{@$setting->image_address}}"
                                      data-sizes="(max-width: 833px) 100vw, 833px"
                                      class="image wp-image-11265  attachment-full size-full lazyloaded"
-                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                     srcset="https://goocchohaanh.com/wp-content/uploads/2024/04/noi-that-go-oc-cho-ha-anh.jpg 833w, https://goocchohaanh.com/wp-content/uploads/2024/04/noi-that-go-oc-cho-ha-anh-768x568.jpg 768w, https://goocchohaanh.com/wp-content/uploads/2024/04/noi-that-go-oc-cho-ha-anh-600x444.jpg 600w"
+                                     src="{{@$setting->image_address}}"
+                                     srcset="{{@$setting->image_address}}"
                                      sizes="(max-width: 833px) 100vw, 833px"/>
                             </a>
                         </section>
@@ -130,7 +122,7 @@
             <div class="wrap">
                 <div class="row">
                     <div class="col-sm-12 text-center">
-                        Copyright © 2020 Nội Thất Hà Anh. <span id="buff"></span> All rights reserved <span
+                        Copyright © 2024 {{@$setting->name_footer}}. <span id="buff"></span> All rights reserved <span
                             id="buff1"></span></div>
                 </div>
             </div>

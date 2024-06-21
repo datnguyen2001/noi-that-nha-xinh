@@ -6,11 +6,11 @@
     <div id="slider">
         <div class="slider-item">
             <noscript><img decoding="async" alt="img-slide" width="100%" height="100%"
-                           data-src="{{asset('assets/images/Ban-PC.jpg')}}" class="lazyload"
-                           src="{{asset('assets/images/Ban-PC.jpg')}}"/></noscript>
+                           data-src="{{asset(@$bannerHome[0]->src)}}" class="lazyload"
+                           src="{{asset(@$bannerHome[0]->src)}}"/></noscript>
             <img decoding="async" alt="img-slide" width="100%" height="100%"
-                 data-src="{{asset('assets/images/Ban-PC.jpg')}}" class="lazyloaded"
-                 src="{{asset('assets/images/Ban-PC.jpg')}}"/></div>
+                 data-src="{{asset(@$bannerHome[0]->src)}}" class="lazyloaded"
+                 src="{{asset(@$bannerHome[0]->src)}}"/></div>
     </div>
     <div id="content" class="site-content">
         <div class="container">
