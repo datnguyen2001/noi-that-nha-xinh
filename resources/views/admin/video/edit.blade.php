@@ -70,6 +70,15 @@
                         </div>
                     </div>
                     <div class="row mt-3">
+                        <div class="col-3">Thể loại :</div>
+                        <div class="col-8">
+                            <select name="selection" class="form-control" required>
+                                <option value="1" @if($data->selection == 1) selected @endif>Video dự án</option>
+                                <option value="2" @if($data->selection == 2) selected @endif>Video sản phẩm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
                         <div class="col-3">Hình ảnh :</div>
                         <div class="col-8">
                             <div class="form-control position-relative div-parent" style="padding-top: 50%">

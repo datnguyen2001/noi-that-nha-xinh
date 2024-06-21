@@ -26,6 +26,7 @@ return new class extends Migration
             $table->longText('src');
             $table->string('image')->nullable();
             $table->integer('display')->default(1);
+            $table->integer('selection')->default(1);
             $table->timestamps();
         });
     }

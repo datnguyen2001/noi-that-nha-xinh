@@ -12,6 +12,7 @@ class NewModel extends Model
     protected $fillable = [
         'name',
         'slug',
+        'type',
         'src',
         'content',
         'display'

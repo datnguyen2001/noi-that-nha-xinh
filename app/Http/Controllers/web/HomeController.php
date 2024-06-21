@@ -15,6 +15,7 @@ use App\Models\CollectionProductModel;
 use App\Models\CommentModel;
 use App\Models\ContactUsModel;
 use App\Models\FooterBlog;
+use App\Models\NewModel;
 use App\Models\PostCollectionModel;
 use App\Models\PostProjectModel;
 use App\Models\PostsModel;
@@ -70,30 +71,18 @@ class HomeController extends Controller
     }
     public function introduction()
     {
-        return view('web.introduction.index');
-    }
-    public function tinTuc()
-    {
-        return view ('web.tin-tuc.index');
-    }
-    public function hotSale(){
-        return view('web.hot-sale.index');
-    }
-    public function cameraVideo() {
-        return view('web.camera-video.index');
-    }
-    public function contact() {
-        return view('web.contact.index');
-    }
-    public function introduction()
-    {
-        return view('web.introduction.index');
-    }
-    public function tinTuc()
-    {
-        return view ('web.tin-tuc.index');
-    }
+        $video_sp = VideoModel::where('selection',2)->where('display',1)->orderBy('created_at','desc')->get();
+        $video_project = VideoModel::where('selection',1)->where('display',1)->orderBy('created_at','desc')->get();
 
+        return view('web.introduction.index',compact('video_sp','video_project'));
+    }
+    public function tinTuc()
+    {
+        $new = NewModel::where('type',2)->where('display',1)->get();
+        $promotion = NewModel::where('type',1)->where('display',1)->get();
+
+        return view ('web.tin-tuc.index',compact('new','promotion'));
+    }
     public function phongCachNoiThat()
     {
         return view('web.phong-cach-noi-that.index');

@@ -49,6 +49,7 @@ class NewController extends Controller
             $new = new NewModel([
                 'name' => $request->get('name'),
                 'slug' => Str::slug($request->get('name')),
+                'type' => $request->get('type'),
                 'content' => $request->get('content'),
                 'display' => $display,
                 'src' => $imagePath
@@ -102,6 +103,7 @@ class NewController extends Controller
             }
             $new->name = $request->get('name');
             $new->slug = Str::slug($request->get('name'));
+            $new->type = $request->get('type');
             $new->content = $request->get('content');
             $new->display = $display;
             $new->save();

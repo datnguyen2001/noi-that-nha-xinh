@@ -22,6 +22,7 @@ class VideoModel extends Model
         'year_implementation',
         'src',
         'image',
-        'display'
+        'display',
+        'selection'
     ];
 }

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
+            $table->integer('type')->default(1)->comment('1 là khuyến mãi, 2 là tin tức');
             $table->string('src');
             $table->string('content');
             $table->integer('display')->default(1);
