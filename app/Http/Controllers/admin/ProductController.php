@@ -13,12 +13,17 @@ use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $titlePage = 'Danh sách sản phẩm';
         $page_menu = 'product';
         $page_sub = null;
-        $listData = ProductModel::orderBy('created_at', 'desc')->paginate(15);
+        if (isset($request->key_search)) {
+            $listData = ProductModel::where('name', 'like', '%' . $request->get('key_search') . '%')
+                ->orderBy('created_at', 'desc')->paginate(15);
+        }else{
+            $listData = ProductModel::orderBy('created_at', 'desc')->paginate(15);
+        }
         foreach ($listData as $val){
             $val->name_category = CategoryModel::find($val->category_id)->name;
         }
