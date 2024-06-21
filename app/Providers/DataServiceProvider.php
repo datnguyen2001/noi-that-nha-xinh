@@ -7,6 +7,7 @@ use App\Models\BannerModel;
 use App\Models\CategoryModel;
 use App\Models\ContactUsModel;
 use App\Models\GeneralModel;
+use App\Models\HeaderModel;
 use App\Models\MenuMainModel;
 use App\Models\NewModel;
 use App\Models\ProjectModel;
@@ -39,8 +40,8 @@ class DataServiceProvider extends ServiceProvider
         $contact_us = ContactUsModel::first();
         $project = ProjectModel::all();
         $list_new = NewModel::where('display',1)->orderBy('created_at','desc')->take(2)->get();
-        $header = ProjectModel::all();
-        foreach ($header as $headers){
+        $data_header = HeaderModel::all();
+        foreach ($data_header as $headers){
             $headers->cate1 = CategoryModel::where('type',$headers->id)->where('parent_id',0)->get();
             foreach ($headers->cate1 as $cate2){
                 $cate2->category = CategoryModel::where('parent_id',$cate2->id)->get();
@@ -53,7 +54,7 @@ class DataServiceProvider extends ServiceProvider
         view()->share('contact_us', $contact_us);
         view()->share('project', $project);
         view()->share('list_new', $list_new);
-        view()->share('header', $header);
+        view()->share('data_header', $data_header);
 
     }
 }

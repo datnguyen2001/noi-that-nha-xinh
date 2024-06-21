@@ -17,4 +17,12 @@ class BoSuuTapController extends Controller
         $post_collection = PostCollectionModel::where('display',1)->orderBy('created_at','desc')->get();
         return view('web.bo-suu-tap.index',compact('banner_collection','category_collection','post_collection'));
     }
+    public function collection($slug)
+    {
+        $banner_collection = BannerModel::where('location',5)->where('display',1)->first();
+        $category_collection = CollectionModel::all();
+        $collection = CollectionModel::where('slug',$slug)->first();
+        $post_collection = PostCollectionModel::where('collection_id',$collection->id)->where('display',1)->orderBy('created_at','desc')->get();
+        return view('web.bo-suu-tap.index2',compact('banner_collection','category_collection','post_collection','collection'));
+    }
 }

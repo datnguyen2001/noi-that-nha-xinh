@@ -1,13 +1,13 @@
 <div class="product-wrap">
     <div class="container">
         <h2 class="heading">
-            <a href="{{route('noi-that-go-oc-cho.home')}}">{{$val->name}}</a>
+            <a href="{{route('menu',$val->slug)}}">{{$val->name}}</a>
         </h2>
         <div class="list-categories__wrap nav-tabs">
             @foreach($val->category as $cate)
             <div class="list-categories__item item">
                 <div class="name">
-                    <a class="item-button" href="{{route('noi-that-go-oc-cho.phong-khach.sofa')}}" title="{{$cate->name}}">
+                    <a class="item-button" href="{{route('category',$cate->slug)}}" title="{{$cate->name}}">
                         <span>{{$cate->name}}</span>
                     </a>
                 </div>
@@ -55,7 +55,7 @@
                 </ul>
             </div>
             <div class="product-wrap__link text-center">
-                <a href="{{route('noi-that-go-oc-cho.home')}}">
+                <a href="{{route('menu',$val->slug)}}">
                     Xem thêm
                 </a>
             </div>
