@@ -35,6 +35,14 @@ return [
             'number' => 10
         ],
         [
+            'name' => 'header',
+            'title' => 'Menu header',
+            'icon' => 'bi bi-grid',
+            'route' => 'admin.header.index',
+            'submenu' => [],
+            'number' => 2
+        ],
+        [
             'name' => 'category',
             'title' => 'Danh mục',
             'icon' => 'bi bi-grid',

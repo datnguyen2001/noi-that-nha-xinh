@@ -77,6 +77,11 @@
                                 <input type="text" class="form-control" id="add-category-name" name="name"
                                        value="{{ old('name') }}">
                             </div>
+                            <div class="mb-3">
+                                <label for="add-category-describe" class="form-label">Mô tả</label>
+                                <input type="text" class="form-control" id="add-category-describe" name="describe"
+                                       value="{{ old('describe') }}">
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -107,6 +112,12 @@
                                     <input type="text" class="form-control edit-category-name"
                                            id="edit-category-name-{{ $cate->id }}" name="name"
                                            value="{{ old('name', $cate->name) }}">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="edit-category-describe-{{ $cate->id }}" class="form-label">Mô tả</label>
+                                    <input type="text" class="form-control edit-category-describe"
+                                           id="edit-category-describe-{{ $cate->id }}" name="describe"
+                                           value="{{ old('describe', $cate->describe) }}">
                                 </div>
                             </div>
                             <div class="modal-footer">

@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProjectModel extends Model
+class HeaderModel extends Model
 {
     use HasFactory;
-    protected $table="project";
-    protected $fillable=[
+    protected $table = 'menu_header';
+    protected $fillable = [
         'name',
         'slug',
-        'describe'
+        'content'
     ];
 }

@@ -15,6 +15,7 @@ use \App\Http\Controllers\admin\CategoryController;
 use \App\Http\Controllers\admin\ProductController;
 use \App\Http\Controllers\admin\SupportController;
 use \App\Http\Controllers\admin\IntroduceController;
+use \App\Http\Controllers\admin\HeaderController;
 
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
@@ -98,6 +99,15 @@ Route::middleware('check-admin-auth')->group(function () {
         Route::get('delete/{id}', [CommentController::class, 'delete']);
         Route::get('edit/{id}', [CommentController::class, 'edit']);
         Route::post('update/{id}', [CommentController::class, 'update']);
+    });
+
+    Route::prefix('header')->name('header.')->group(function () {
+        Route::get('', [HeaderController::class, 'index'])->name('index');
+        Route::get('create', [HeaderController::class, 'create'])->name('create');
+        Route::post('store', [HeaderController::class, 'store'])->name('store');
+        Route::get('delete/{id}', [HeaderController::class, 'delete']);
+        Route::get('edit/{id}', [HeaderController::class, 'edit'])->name('edit');
+        Route::post('update/{id}', [HeaderController::class, 'update'])->name('update');
     });
 
     Route::prefix('category')->name('category.')->group(function () {
