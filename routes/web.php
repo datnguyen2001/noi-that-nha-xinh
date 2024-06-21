@@ -105,7 +105,7 @@ Route::group(['prefix' => 'bo-suu-tap', 'as' => 'bo-suu-tap.'], function () {
 Route::get('/tin-tuc' , [HomeController::class, 'tinTuc'])->name('tin-tuc');
 Route::get('/gioi-thieu', [HomeController::class, 'gioiThieu'])->name('gioi-thieu');
 Route::get('/phong-cach-noi-that-go-oc-cho', [HomeController::class, 'phongCachNoiThat'])->name('phong-cach-noi-that');
-
+Route::get('product-details', [HomeController::class, 'productDetails'])->name('product-details');
 
 Route::middleware('auth')->group(function () {
 
