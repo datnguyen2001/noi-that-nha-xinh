@@ -1,15 +1,14 @@
-@if(isset($category1) && isset($product_cate1))
 <div class="product-wrap">
     <div class="container">
         <h2 class="heading">
-            <a href="{{route('noi-that-go-oc-cho.home')}}">NỘI THẤT GỖ ÓC CHÓ</a>
+            <a href="{{route('noi-that-go-oc-cho.home')}}">{{$val->name}}</a>
         </h2>
         <div class="list-categories__wrap nav-tabs">
-            @foreach($category1 as $cate1)
+            @foreach($val->category as $cate)
             <div class="list-categories__item item">
                 <div class="name">
-                    <a class="item-button" href="{{route('noi-that-go-oc-cho.phong-khach.sofa')}}" title="{{$cate1->name}}">
-                        <span>{{$cate1->name}}</span>
+                    <a class="item-button" href="{{route('noi-that-go-oc-cho.phong-khach.sofa')}}" title="{{$cate->name}}">
+                        <span>{{$cate->name}}</span>
                     </a>
                 </div>
             </div>
@@ -18,7 +17,7 @@
         <div class="tab-panels">
             <div class="sh-product-shortcode column-3">
                 <ul class="row list-products d-flex flex-wrap">
-                    @foreach($product_cate1 as $pro_cate1)
+                    @foreach($val->product as $pro_cate1)
                     <li class="6800 product type-product post-6799 status-publish first instock product_cat-phong-khach-tan-co-dien-ha-anh product_cat-sofa-tan-co-dien has-post-thumbnail shipping-taxable product-type-simple col-4">
                         <div class="wrap-product">
                             <div class="image-product">
@@ -63,4 +62,3 @@
         </div>
     </div>
 </div>
-@endif

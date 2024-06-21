@@ -15,6 +15,7 @@ use App\Models\CollectionProductModel;
 use App\Models\CommentModel;
 use App\Models\ContactUsModel;
 use App\Models\FooterBlog;
+use App\Models\HeaderModel;
 use App\Models\NewModel;
 use App\Models\PostCollectionModel;
 use App\Models\PostProjectModel;
@@ -44,12 +45,13 @@ class HomeController extends Controller
     {
         $introduce = StoreIntroduceModel::first();
         $product_sale = ProductModel::where('display',1)->where('is_sale',1)->orderBy('created_at','desc')->get();
-        $category1 = CategoryModel::where('type',1)->where('parent_id',0)->get();
-        $category_id1 = $category1->pluck('id');
-        $product_cate1 = ProductModel::where('display',1)->whereIn('category_id',$category_id1)->orderBy('created_at','desc')->take(6)->get();
-        $category2 = CategoryModel::where('type',2)->where('parent_id',0)->get();
-        $category_id2 = $category1->pluck('id');
-        $product_cate2 = ProductModel::where('display',1)->whereIn('category_id',$category_id2)->orderBy('created_at','desc')->take(6)->get();
+        $header = HeaderModel::all();
+        foreach ($header as $headers){
+            $categorys = CategoryModel::where('type',$headers->id)->where('parent_id',0)->get();
+            $headers->category = $categorys;
+            $category_id = CategoryModel::where('type',$headers->id)->pluck('id');
+            $headers->product = ProductModel::where('display',1)->whereIn('category_id',$category_id)->orderBy('created_at','desc')->take(6)->get();
+        }
         $project_category = ProjectModel::get();
         if (!empty($project_category) && isset($project_category[0])) {
             $post_project = PostProjectModel::where('project_id',$project_category[0]->id)->where('display',1)->orderBy('created_at','desc')->take(8)->get();
@@ -62,11 +64,13 @@ class HomeController extends Controller
         $comment = CommentModel::where('display',1)->orderBy('created_at','desc')->take(6)->get();
         $collection = PostCollectionModel::where('display',1)->orderBy('created_at','desc')->take(8)->get();
 
-        return view('web.home.index',compact('introduce','product_sale','category1','product_cate1','category2','product_cate2',
-        'post_project','project_category','post_project_2','video','comment','collection'));
+        return view('web.home.index',compact('introduce','product_sale', 'post_project','project_category','post_project_2','video','comment','collection','header'));
     }
     public function hotSale(){
-        return view('web.hot-sale.index');
+        $product_sale = ProductModel::where('is_sale',1)->where('display',1)->get();
+        $banner_sale = BannerModel::where('location',2)->where('display',1)->first();
+
+        return view('web.hot-sale.index',compact('product_sale','banner_sale'));
     }
     public function cameraVideo() {
         return view('web.camera-video.index');
@@ -78,8 +82,9 @@ class HomeController extends Controller
     {
         $video_sp = VideoModel::where('selection',2)->where('display',1)->orderBy('created_at','desc')->get();
         $video_project = VideoModel::where('selection',1)->where('display',1)->orderBy('created_at','desc')->get();
-
-        return view('web.introduction.index',compact('video_sp','video_project'));
+        $banner_video = BannerModel::where('location',6)->where('display',1)->first();
+        $introduce = StoreIntroduceModel::first();
+        return view('web.introduction.index',compact('video_sp','video_project','banner_video','introduce'));
     }
     public function tinTuc()
     {

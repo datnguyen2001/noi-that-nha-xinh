@@ -89,7 +89,7 @@ Route::group(['prefix' => 'phong-tho', 'as' => 'phong-tho.'], function () {
 
 Route::group(['prefix' => 'du-an', 'as' => 'du-an.'], function () {
     Route::get('/', [DuAnController::class, 'duAn'])->name('index');
-    Route::get('/details', [DuAnController::class, 'details'])->name('details');
+    Route::get('/{slug}', [DuAnController::class, 'details'])->name('details');
 
     Route::get('/du-an-thiet-ke-go-oc-cho', [DuAnController::class, 'duAnThietKe'])->name('du-an-thiet-ke');
     Route::get('/du-an-thi-cong-go-oc-cho', [DuAnController::class, 'duAnThiCong'])->name('du-an-thi-cong');

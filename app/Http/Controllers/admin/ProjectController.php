@@ -28,6 +28,7 @@ class ProjectController extends Controller
             $project = new ProjectModel([
                 'name' => $request->get('name'),
                 'slug' => Str::slug($request->get('name')),
+                'describe' => Str::slug($request->get('describe')),
             ]);
             $project->save();
             return redirect()->route('admin.project.index')->with(['success' => 'Tạo dữ liệu thành công']);
@@ -55,6 +56,7 @@ class ProjectController extends Controller
             $project = ProjectModel::find($id);
             $project->name = $request->get('name');
             $project->slug = Str::slug($request->get('name'));
+            $project->describe = $request->get('describe');
             $project->save();
             return redirect()->route('admin.project.index')->with(['success' => 'Cập nhật dữ liệu thành công']);
         } catch (\Exception $e) {
