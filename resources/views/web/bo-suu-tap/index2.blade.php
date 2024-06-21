@@ -1,6 +1,10 @@
 @extends('web.index')
 @section('title','Bộ sưu tập')
-
+<style>
+    .list-categories__item .active{
+        background-color: #fe0100!important;
+    }
+</style>
 {{--content of page--}}
 @section('content')
     <div id="content" class="site-content">
@@ -24,7 +28,7 @@
                             <ul class="list-categories__wrap">
                                 @foreach($category_collection as $category_collections)
                                     <li class="list-categories__item">
-                                        <a class="d-block"
+                                        <a class="d-block @if($category_collections->id == $collection->id) active @endif"
                                            href="{{route('bo-suu-tap.collection',$category_collections->slug)}}">
                                             {{$category_collections->name}}
                                         </a>

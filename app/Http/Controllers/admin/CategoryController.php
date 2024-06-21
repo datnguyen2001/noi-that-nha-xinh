@@ -90,7 +90,7 @@ class CategoryController extends Controller
         try {
             $category = CategoryModel::find($id);
             $category->name = $request->get('title');
-            $category->slug = Str::slug($request->get('slug'));
+            $category->slug = Str::slug($request->get('title'));
             $category->parent_id = $request->get('parent_id');
             $category->type = $request->get('type');
             $category->content = $request->get('content');

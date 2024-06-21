@@ -5,8 +5,8 @@
         <div class="row">
             <div class="col-12 box_cat_pro">
                 <h2 class="woocommerce-products-header__title">
-                    <a class="title_procat" href=https://goocchohaanh.com/phong-khach-go-oc-cho-dep/>{{$cate->name}}</a>
-                    <a class="xemtatca d-md-block d-none" href=https://goocchohaanh.com/phong-khach-go-oc-cho-dep/>Xem tất cả</a>
+                    <a class="title_procat" href={{ route('category',$cate->slug) }}>{{$cate->name}}</a>
+                    <a class="xemtatca d-md-block d-none" href={{ route('category',$cate->slug) }}>Xem tất cả</a>
                 </h2>
             </div>
         </div>
