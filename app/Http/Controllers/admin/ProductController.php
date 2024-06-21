@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $titlePage = 'Danh sách sản phẩm';
         $page_menu = 'product';
