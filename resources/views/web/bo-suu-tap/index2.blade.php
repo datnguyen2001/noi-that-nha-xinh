@@ -10,7 +10,7 @@
     <div id="content" class="site-content">
         @if(isset($banner_collection))
             <div class="banner-bst">
-                <img alt="Banner BST"
+                <img alt="Banner BST" width="100%"
                      data-src="{{asset(@$banner_collection->src)}}"
                      class="lazyloaded"
                      src="{{asset(@$banner_collection->src)}}">
@@ -46,9 +46,10 @@
                                         <div class="post-inner">
                                             <div class="entry-thumb">
                                                 <a class="d-block"
-                                                   href="https://goocchohaanh.com/bo-suu-tap/bo-suu-tap-sofa-tan-co-dien-dlouis/"
-                                                   title="{{$post_collections->name}}">
-                                                    <img width="100%" height="100%"
+                                                   href="{{route('bo-suu-tap-details', $post_collections->slug)}}"
+                                                   title="{{$post_collections->name}}"
+                                                   style="height: auto">
+                                                    <img width="100%" height="auto"
                                                          alt="{{$post_collections->name}}"
                                                          decoding="async" fetchpriority="high"
                                                          data-srcset="{{asset($post_collections->src)}}"
@@ -60,7 +61,7 @@
                                             </div>
                                             <div class="entry-content">
                                                 <h2 class="entry-title">
-                                                    <a href="https://goocchohaanh.com/bo-suu-tap/bo-suu-tap-sofa-tan-co-dien-dlouis/"
+                                                    <a href="{{route('bo-suu-tap-details', $post_collections->slug)}}"
                                                        title="{{$post_collections->name}}">{{$post_collections->name}}
                                                     </a>
                                                 </h2>

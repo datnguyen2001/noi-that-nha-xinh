@@ -47,40 +47,66 @@
                         </h2>
                         <div class="wpcf7 no-js" id="wpcf7-f4737-p823-o1" lang="vi" dir="ltr">
                             <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
-                            <form action="/lien-he/#wpcf7-f4737-p823-o1" method="post" class="wpcf7-form init" aria-label="Form liên hệ" novalidate="novalidate" data-status="init">
                                 <div class="row">
                                     <div class="col-md-12 col-12 form-popup">
                                         <h4 class="modal-title">Đăng ký nhận thông tin
                                         </h4>
-                                        <div class="box_dangkytuvan">
-                                            <div class="form-group">
-                                                <p><span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" aria-required="true" aria-invalid="false" placeholder="Họ và tên" value="" type="text" name="your-name" /></span>
-                                                </p>
+                                        <form method="POST" action="{{ route('dang-ky.submit') }}">
+                                            @csrf
+                                            <div class="box_dangkytuvan">
+                                                <div class="form-group">
+                                                    <p>
+                                                    <span class="wpcf7-form-control-wrap" data-name="your-name">
+                                                    <input size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                                                           aria-required="true" aria-invalid="false"
+                                                           placeholder="Họ và tên" value="" type="text" name="your-name" required/>
+                                                    </span>
+                                                    </p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <p>
+                                                    <span class="wpcf7-form-control-wrap" data-name="your-address">
+                                                        <input size="40" class="wpcf7-form-control wpcf7-text form-control"
+                                                               aria-invalid="false" placeholder="Địa chỉ"
+                                                               value="" type="text" name="your-address" required/>
+                                                    </span>
+                                                    </p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <p>
+                                                    <span class="wpcf7-form-control-wrap" data-name="your-phone">
+                                                        <input size="40" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel form-control"
+                                                               aria-required="true" aria-invalid="false"
+                                                               placeholder="Điện thoại" value="" type="tel" name="your-phone" required/>
+                                                    </span>
+                                                    </p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <p>
+                                                    <span class="wpcf7-form-control-wrap" data-name="your-email">
+                                                        <input size="40" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email form-control"
+                                                               aria-invalid="false" placeholder="Email"
+                                                               value="" type="email" name="your-email" required/>
+                                                    </span>
+                                                    </p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <p>
+                                                    <span class="wpcf7-form-control-wrap" data-name="your-message">
+                                                        <textarea rows="10" class="wpcf7-form-control wpcf7-textarea form-control" aria-invalid="false" placeholder="Nội dung" name="your-message" required></textarea>
+                                                    </span>
+                                                    </p>
+                                                </div>
+                                                <div class="form-submit">
+                                                    <p>
+                                                        <button class="wpcf7-form-control wpcf7-submit has-spinner custom-submit">Gửi đi</button>
+                                                    </p>
+                                                </div>
                                             </div>
-                                            <div class="form-group">
-                                                <p><span class="wpcf7-form-control-wrap" data-name="your-address"><input size="40" class="wpcf7-form-control wpcf7-text form-control" aria-invalid="false" placeholder="Địa chỉ" value="" type="text" name="your-address" /></span>
-                                                </p>
-                                            </div>
-                                            <div class="form-group">
-                                                <p><span class="wpcf7-form-control-wrap" data-name="your-phone"><input size="40" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel form-control" aria-required="true" aria-invalid="false" placeholder="Điện thoại" value="" type="tel" name="your-phone" /></span>
-                                                </p>
-                                            </div>
-                                            <div class="form-group">
-                                                <p><span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" class="wpcf7-form-control wpcf7-email wpcf7-text wpcf7-validates-as-email form-control" aria-invalid="false" placeholder="Email" value="" type="email" name="your-email" /></span>
-                                                </p>
-                                            </div>
-                                            <div class="form-group">
-                                                <p><span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea form-control" aria-invalid="false" placeholder="Nội dung" name="your-message"></textarea></span>
-                                                </p>
-                                            </div>
-                                            <div class="form-submit">
-                                                <p><input class="wpcf7-form-control wpcf7-submit has-spinner custom-submit" type="submit" value="Gửi đi" />
-                                                </p>
-                                            </div>
-                                        </div>
+                                        </form>
                                     </div>
-                                </div><div class="wpcf7-response-output" aria-hidden="true"></div>
-                            </form>
+                                </div>
+                            <div class="wpcf7-response-output" aria-hidden="true"></div>
                         </div>
                     </div>
                 </div>

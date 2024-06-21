@@ -16,7 +16,7 @@
                         <article id="post-8883" class="element post-item item-new col-md-6 post-8883 post type-post status-publish format-standard has-post-thumbnail hentry category-du-an category-du-an-thiet-ke-go-oc-cho">
                             <div class="post-inner">
                                 <div class="entry-thumb">
-                                    <a class="d-block" href="https://goocchohaanh.com/anh-huan-biet-thu-thanh-pho-lao-cai/"
+                                    <a class="d-block" href="{{route('du-an-details', $dataProjects->slug)}}"
                                        title="{{$dataProjects->name}}">
                                         <img width="100%" height="100%"
                                              alt="{{$dataProjects->name}}"
@@ -29,7 +29,7 @@
                                 </div>
                                 <div class="entry-content">
                                     <h2 class="entry-title">
-                                        <a href="https://goocchohaanh.com/anh-huan-biet-thu-thanh-pho-lao-cai/"
+                                        <a href="{{route('du-an-details', $dataProjects->slug)}}"
                                            title="{{$dataProjects->name}}">
                                             {{$dataProjects->name}}
                                         </a>

@@ -78,7 +78,7 @@ class HeaderController extends Controller
         try {
             $category = HeaderModel::find($id);
             $category->name = $request->get('title');
-            $category->slug = Str::slug($request->get('slug'));
+            $category->slug = Str::slug($request->get('title'));
             $category->content = $request->get('content');
             $category->save();
 

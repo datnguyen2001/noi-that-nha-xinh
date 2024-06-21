@@ -18,14 +18,10 @@ class ProductController extends Controller
         $titlePage = 'Danh sách sản phẩm';
         $page_menu = 'product';
         $page_sub = null;
-        if (isset($request->key_search)) {
-            $listData = ProductModel::where('name', 'like', '%' . $request->get('key_search') . '%')
-                ->orderBy('created_at', 'desc')->paginate(15);
-        }else{
-            $listData = ProductModel::orderBy('created_at', 'desc')->paginate(15);
-        }
-        foreach ($listData as $val){
-            $val->name_category = CategoryModel::find($val->category_id)->name;
+        $listData = ProductModel::orderBy('created_at', 'desc')->paginate(15);
+        foreach ($listData as $val) {
+            $category = CategoryModel::find($val->category_id);
+            $val->name_category = $category ? $category->name : 'Chưa có tên';
         }
 
         return view('admin.product.index', compact('titlePage', 'page_menu', 'page_sub', 'listData'));

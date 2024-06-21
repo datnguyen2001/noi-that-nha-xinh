@@ -92,7 +92,7 @@
                                              data-srcset="{{asset($collections->src)}}"
                                              data-src="{{asset($collections->src)}}"
                                              data-sizes="(max-width: 1920px) 100vw, 1920px"
-                                             class="attachment-large size-large wp-post-image lazyloaded"
+                                             class="attachment-large size-large wp-post-image-large lazyloaded"
                                              src="{{asset($collections->src)}}"/>
                                     </noscript>
                                     <img width="100%" height="100%"
@@ -101,7 +101,7 @@
                                          data-srcset="{{asset($collections->src)}}"
                                          data-src="{{asset($collections->src)}}"
                                          data-sizes="(max-width: 1920px) 100vw, 1920px"
-                                         class="attachment-large size-large wp-post-image lazyloaded"
+                                         class="attachment-large size-large wp-post-image-large lazyloaded"
                                          src="{{asset($collections->src)}}"/></a>
                             </div>
                             <h3 class="woocommerce-loop-product__title">

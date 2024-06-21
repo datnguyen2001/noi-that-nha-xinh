@@ -22,7 +22,7 @@
                         <li class="6800 product type-product post-6799 status-publish first instock product_cat-phong-khach-tan-co-dien-ha-anh product_cat-sofa-tan-co-dien has-post-thumbnail shipping-taxable product-type-simple col-4">
                             <div class="wrap-product">
                                 <div class="image-product">
-                                    <a class="img hover-zoom" href="https://goocchohaanh.com/product/sofa-go-oc-cho-bo-roma-01/" title="SOFA GỖ ÓC CHÓ ROMA 01">
+                                    <a class="img hover-zoom" href="{{route('product-detail', $pro_cate2->slug)}}" title="SOFA GỖ ÓC CHÓ ROMA 01">
                                         <noscript><img width="100%" height="100%"
                                                        alt="{{$pro_cate2->name}}" decoding="async"
                                                        data-srcset="{{asset($pro_cate2->src)}}"
@@ -42,7 +42,7 @@
                                 </div>
                                 <h3 class="woocommerce-loop-product__title">
                                     <a class="img hover-zoom"
-                                       href="https://goocchohaanh.com/product/sofa-go-oc-cho-bo-roma-01/"
+                                       href="{{route('product-detail', $pro_cate2->slug)}}"
                                        title="{{$pro_cate2->name}}">{{$pro_cate2->name}}
                                     </a>
                                 </h3>

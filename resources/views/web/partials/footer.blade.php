@@ -74,10 +74,10 @@
                                 <ul id="menu-ho-tro-khach-hang" class="menu">
                                     @if(isset($support) && count($support)>0)
                                         @foreach($support as $support_item)
-                                    <li id="menu-item-426"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-426">
-                                        <a href="https://goocchohaanh.com/huong-dan-mua-hang/">{{$support_item->name}}</a>
-                                    </li>
+                                            <li id="menu-item-426"
+                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-426">
+                                                <a href="{{ route('support.slug', ['slug' => $support_item->slug]) }}">{{ $support_item->name }}</a>
+                                            </li>
                                         @endforeach
                                     @endif
                                     <li id="menu-item-5560"

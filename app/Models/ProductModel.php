@@ -28,4 +28,13 @@ class ProductModel extends Model
         'display',
         'is_sale'
     ];
+    public function category()
+    {
+        return $this->belongsTo(CategoryModel::class, 'category_id');
+    }
+
+    public function images()
+    {
+        return $this->hasMany(ProductImageModel::class, 'product_id');
+    }
 }

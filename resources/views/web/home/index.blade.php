@@ -30,9 +30,6 @@
                 </section>
                     @endforeach
                 @endif
-{{--                <section id="product-categories2" class="product-categories product-tcd home-section">--}}
-{{--                    @include('web.home.partials.tan_co_dien_category')--}}
-{{--                </section>--}}
             </main>
         </div>
         <section id="banner_pc" class="home-section homepage-banner">

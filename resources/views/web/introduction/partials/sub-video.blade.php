@@ -8,7 +8,7 @@
                 @foreach($video_project as $video_projects)
                 <div class="box_item_post mb-3 col-md-6">
                     <div class="box-eb-video">
-                        <a href="https://goocchohaanh.com/anh-ha-biet-thu-dao-ecopark/"
+                        <a href="{{ route('video-detail', $video_projects->slug) }}"
                            class="d-block open-video">
                             <div class="box-image d-block">
                                 <img
@@ -21,7 +21,7 @@
                         </a>
                         <div class="title_video">
                             <h2 class="tieude">
-                                <a href="https://goocchohaanh.com/anh-ha-biet-thu-dao-ecopark/" class="d-block open-video">
+                                <a href="{{ route('video-detail', $video_projects->slug) }}" class="d-block open-video">
                                     {{$video_projects->name}}
                                 </a>
                             </h2>
@@ -47,7 +47,7 @@
                 @foreach($video_sp as $video_sps)
                 <div class="box_item_post mb-3 col-md-6">
                     <div class="box-eb-video">
-                        <a href="https://goocchohaanh.com/anh-ha-biet-thu-dao-ecopark/"
+                        <a href="{{ route('video-detail', $video_sps->slug) }}"
                            class="d-block open-video">
                             <div class="box-image d-block">
                                 <img
@@ -60,7 +60,7 @@
                         </a>
                         <div class="title_video">
                             <h2 class="tieude">
-                                <a href="https://goocchohaanh.com/anh-ha-biet-thu-dao-ecopark/" class="d-block open-video">
+                                <a href="{{ route('video-detail', $video_sps->slug) }}" class="d-block open-video">
                                     {{$video_sps->name}}
                                 </a>
                             </h2>

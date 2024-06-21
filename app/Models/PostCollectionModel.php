@@ -18,4 +18,8 @@ class PostCollectionModel extends Model
         'src',
         'display'
     ];
+    public function images()
+    {
+        return $this->hasMany(CollectionImageModel::class, 'post_collection_id');
+    }
 }

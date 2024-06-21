@@ -43,9 +43,16 @@ class NoiThatGoOcChoController extends Controller
         return view('web.noi-that-go-oc-cho.detail',compact('listData','category','menu'));
     }
 
-    public function sanPham()
+    public function productDetails($slug)
     {
-        return view('web.noi-that-go-oc-cho.details.san-pham');
+        $productDetails = ProductModel::where('slug', $slug)->with('images')->first();
+        $relatedProducts = ProductModel::where('category_id', $productDetails->category_id)
+            ->where('id', '!=', $productDetails->id)
+            ->with('images')
+            ->take(9)
+            ->get();
+
+        return view('web.product-details.index', compact('productDetails', 'relatedProducts'));
     }
 }
 

@@ -25,4 +25,8 @@ class PostProjectModel extends Model
         'src',
         'display'
     ];
+    public function images()
+    {
+        return $this->hasMany(ProjectImageModel::class, 'post_project_id');
+    }
 }

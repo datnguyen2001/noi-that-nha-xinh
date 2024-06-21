@@ -23,4 +23,11 @@ class DuAnController extends Controller
         $dataProject = PostProjectModel::where('project_id',$cate->id)->where('display',1)->get();
         return view('web.du-an.details.du-an-details',compact('dataProject','cate'));
     }
+
+    public function duAnDetails($slug)
+    {
+        $detailProject = PostProjectModel::where('slug',$slug)->with('images')->first();
+
+        return view('web.du-an.details.du-an-sub-details', compact('detailProject'));
+    }
 }
