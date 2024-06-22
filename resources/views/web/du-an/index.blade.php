@@ -11,7 +11,7 @@
                             @foreach($cate_project as $item)
                             <div class="container mb-5">
                                 <h2 class="heading">
-                                    <a class="item-category" href="https://goocchohaanh.com/du-an/du-an-thiet-ke-go-oc-cho/">
+                                    <a class="item-category" href="{{route('du-an-details', $item->slug)}}">
                                         {{$item->name}}
                                     </a>
                                 </h2>
@@ -28,7 +28,7 @@
                                     </div>
                                 </div>
                                 <div class="categories-readmore text-center">
-                                    <a class="item-category" href="https://goocchohaanh.com/du-an/du-an-thiet-ke-go-oc-cho/">
+                                    <a class="item-category" href="{{route('du-an-details', $item->slug)}}">
                                         Xem thêm
                                     </a>
                                 </div>

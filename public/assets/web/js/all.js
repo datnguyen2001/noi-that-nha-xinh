@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {
-    if (window.innerWidth < 992) {
-        document.body.classList.add('show-menu-mobile');
-    }
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//     if (window.innerWidth < 992) {
+//         document.body.classList.add('show-menu-mobile');
+//     }
+// });
 
 document.addEventListener('DOMContentLoaded', function() {
     var siteNavigation = document.getElementById('site-navigation');

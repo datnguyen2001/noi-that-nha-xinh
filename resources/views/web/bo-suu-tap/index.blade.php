@@ -6,7 +6,7 @@
     <div id="content" class="site-content">
         @if(isset($banner_collection))
             <div class="banner-bst">
-                <img alt="Banner BST"
+                <img alt="Banner BST" width="100%"
                      data-src="{{asset(@$banner_collection->src)}}"
                      class="lazyloaded"
                      src="{{asset(@$banner_collection->src)}}">

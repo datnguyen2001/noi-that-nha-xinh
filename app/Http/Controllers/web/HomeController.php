@@ -70,6 +70,16 @@ class HomeController extends Controller
 
         return view ('web.tin-tuc.index',compact('new','promotion'));
     }
+    public function tinTucKhuyenMai()
+    {
+        $promotion = NewModel::where('type',1)->where('display',1)->get();
+        return view('web.khuyen-mai-tin-tuc.khuyen-mai', compact('promotion'));
+    }
+    public function tinTucTinTUc()
+    {
+        $new = NewModel::where('type',2)->where('display',1)->get();
+        return view('web.khuyen-mai-tin-tuc.tin-tuc', compact('new'));
+    }
     public function phongCachNoiThat()
     {
         return view('web.phong-cach-noi-that.index');
@@ -78,9 +88,10 @@ class HomeController extends Controller
     {
         return view('web.product-details.index');
     }
-    public function khuyenMaiDetails()
+    public function khuyenMaiDetails($slug)
     {
-        return view('web.khuyen-mai-details.index');
+        $news = NewModel::where('slug', $slug)->first();
+        return view('web.khuyen-mai-details.index', compact('news'));
     }
     public function supportSlug($slug)
     {

@@ -43,10 +43,12 @@ Route::group(['prefix' => 'bo-suu-tap', 'as' => 'bo-suu-tap.'], function () {
 });
 
 Route::get('/tin-tuc' , [HomeController::class, 'tinTuc'])->name('tin-tuc');
+Route::get('/tin-tuc/khuyen-mai' , [HomeController::class, 'tinTucKhuyenMai'])->name('tin-tuc-khuyen-mai');
+Route::get('/tin-tuc/tin-tuc' , [HomeController::class, 'tinTucTinTuc'])->name('tin-tuc-tin-tuc');
 Route::get('/gioi-thieu', [HomeController::class, 'gioiThieu'])->name('gioi-thieu');
 Route::get('/phong-cach-noi-that-go-oc-cho', [HomeController::class, 'phongCachNoiThat'])->name('phong-cach-noi-that');
 Route::get('/product-details', [HomeController::class, 'productDetails'])->name('product-details');
-Route::get('/khuyen-mai-details', [HomeController::class, 'khuyenMaiDetails'])->name('khuyen-mai-details');
+Route::get('/khuyen-mai-details/{slug}', [HomeController::class, 'khuyenMaiDetails'])->name('khuyen-mai-details');
 Route::get('/support/{slug}', [HomeController::class, 'supportSlug'])->name('support.slug');
 
 Route::post('/dang-ky-nhan-thong-tin', [ContactController::class, 'submitForm'])->name('dang-ky.submit');
