@@ -94,7 +94,7 @@
                                     </tr>
                                     </tbody>
                                 </table>
-                                <p><a class="popup_form_dat-hang"><strong>ĐĂNG KÝ TƯ VẤN</strong></a></p>
+                                <p><a href="#register-form" class="popup_form_dat-hang"><strong>ĐĂNG KÝ TƯ VẤN</strong></a></p>
                             </div>
                         </div>
                     </div>

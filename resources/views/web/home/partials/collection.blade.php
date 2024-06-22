@@ -14,7 +14,7 @@
                         <li class="product type-product product-11118">
                             <div class="wrap-product">
                                 <div class="image-product">
-                                    <a class="img hover-zoom" href="https://goocchohaanh.com/bo-suu-tap/bo-suu-tap-sofa-tan-co-dien-dlouis/">
+                                    <a class="img hover-zoom" href="{{route('bo-suu-tap-details', $collection[0]->slug)}}">
                                         <noscript>
                                             <img width="100%" height="100%"
                                                        alt="{{$collection[0]->name}}"
@@ -35,7 +35,7 @@
                                              src="{{asset($collection[0]->src)}}"/></a>
                                 </div>
                                 <h3 class="woocommerce-loop-product__title">
-                                    <a title="{{$collection[0]->name}}" href="https://goocchohaanh.com/bo-suu-tap/bo-suu-tap-sofa-tan-co-dien-dlouis/">
+                                    <a title="{{$collection[0]->name}}" href="{{route('bo-suu-tap-details', $collection[0]->slug)}}">
                                         {{$collection[0]->name}}
                                     </a>
                                 </h3>
@@ -46,7 +46,7 @@
                         <li class="product type-product product-10991">
                             <div class="wrap-product">
                                 <div class="image-product">
-                                    <a class="img hover-zoom" href="https://goocchohaanh.com/bo-suu-tap/bo-suu-tap-sofa-tan-co-dien-dlouis/">
+                                    <a class="img hover-zoom" href="{{route('bo-suu-tap-details', $collection[1]->slug)}}">
                                         <noscript>
                                             <img width="100%" height="100%"
                                                  alt="{{@$collection[1]->name}}"
@@ -67,7 +67,7 @@
                                              src="{{asset(@$collection[1]->src)}}"/></a>
                                 </div>
                                 <h3 class="woocommerce-loop-product__title">
-                                    <a title="{{@$collection[1]->name}}" href="https://goocchohaanh.com/bo-suu-tap/bo-suu-tap-2/">
+                                    <a title="{{@$collection[1]->name}}" href="{{route('bo-suu-tap-details', $collection[1]->slug)}}">
                                         {{@$collection[1]->name}}
                                     </a>
                                 </h3>
@@ -84,7 +84,7 @@
                     <div class="product type-product product-10988">
                         <div class="wrap-product">
                             <div class="image-product">
-                                <a class="img hover-zoom" href="https://goocchohaanh.com/bo-suu-tap/bo-suu-tap-sofa-tan-co-dien-dlouis/">
+                                <a class="img hover-zoom" href="{{route('bo-suu-tap-details', $collections->slug)}}">
                                     <noscript>
                                         <img width="100%" height="100%"
                                              alt="{{$collections->name}}"
@@ -123,7 +123,7 @@
                         <li class="product type-product product-10988">
                             <div class="wrap-product">
                                 <div class="image-product">
-                                    <a class="img hover-zoom" href="https://goocchohaanh.com/bo-suu-tap/bo-suu-tap-sofa-tan-co-dien-dlouis/">
+                                    <a class="img hover-zoom" href="{{route('bo-suu-tap-details', $collections->slug)}}">
                                         <noscript>
                                             <img width="100%" height="100%"
                                                  alt="{{$collections->name}}"
@@ -144,7 +144,7 @@
                                              src="{{asset($collections->src)}}"/></a>
                                 </div>
                                 <h3 class="woocommerce-loop-product__title">
-                                    <a title="{{$collections->name}}" href="https://goocchohaanh.com/bo-suu-tap/bo-suu-tap-sofa-tan-co-dien-dlouis/">
+                                    <a title="{{$collections->name}}" href="{{route('bo-suu-tap-details', $collections->slug)}}">
                                         {{$collections->name}}
                                     </a>
                                 </h3>
