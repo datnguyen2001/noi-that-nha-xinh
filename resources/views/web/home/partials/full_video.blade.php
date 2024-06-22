@@ -12,7 +12,7 @@
                      data-arrows="true" data-autoplay="true" data-vertical="false">
                     <div class="video_item">
                         <div class="video__inner">
-                            <a href="{{route('introduction')}}" class="d-block fancy_boxVideo">
+                            <a href="{{route('video-detail',@$video[0]->slug)}}" class="d-block fancy_boxVideo">
                                 <noscript>
                                     <img decoding="async" alt="{{@$video[0]->name}}"
                                          data-src="{{asset(@$video[0]->image)}}"
@@ -33,7 +33,7 @@
             <div class="list_video row">
                 @if(isset($video[1]))
                     <div class="item_video col-lg-12 col-6">
-                        <a href="{{route('introduction')}}" class="d-block fancy_boxVideo">
+                        <a href="{{route('video-detail',@$video[1]->slug)}}" class="d-block fancy_boxVideo">
                             <noscript>
                                 <img decoding="async" alt="{{@$video[1]->name}}"
                                      data-src="{{asset(@$video[1]->image)}}"
@@ -49,7 +49,7 @@
                 @endif
                 @if(isset($video[2]))
                     <div class="item_video col-lg-12 col-6">
-                        <a href="{{route('introduction')}}" class="d-block fancy_boxVideo">
+                        <a href="{{route('video-detail',@$video[2]->slug)}}" class="d-block fancy_boxVideo">
                             <noscript>
                                 <img decoding="async" alt="{{@$video[2]->name}}"
                                      data-src="{{asset(@$video[2]->image)}}"
@@ -69,7 +69,7 @@
     <div class="list_video row">
         @if(isset($video[3]))
             <div class="item_video col-lg-4 col-6">
-                <a href="{{route('introduction')}}" class="d-block fancy_boxVideo">
+                <a href="{{route('video-detail',@$video[3]->slug)}}" class="d-block fancy_boxVideo">
                     <noscript>
                         <img decoding="async" alt="{{@$video[3]->name}}"
                              data-src="{{asset(@$video[3]->image)}}"
@@ -85,7 +85,7 @@
         @endif
         @if(isset($video[4]))
             <div class="item_video col-lg-4 col-6">
-                <a href="{{route('introduction')}}" class="d-block fancy_boxVideo">
+                <a href="{{route('video-detail',@$video[4]->slug)}}" class="d-block fancy_boxVideo">
                     <noscript>
                         <img decoding="async" alt="{{@$video[4]->name}}"
                              data-src="{{asset(@$video[4]->image)}}"
@@ -101,7 +101,7 @@
         @endif
         @if(isset($video[5]))
             <div class="item_video col-lg-4 col-6">
-                <a href="{{route('introduction')}}" class="d-block fancy_boxVideo">
+                <a href="{{route('video-detail',@$video[5]->slug)}}" class="d-block fancy_boxVideo">
                     <noscript>
                         <img decoding="async" alt="{{@$video[5]->name}}"
                              data-src="{{asset(@$video[5]->image)}}"
