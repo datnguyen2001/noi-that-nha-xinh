@@ -105,7 +105,7 @@
                                          src="{{asset($collections->src)}}"/></a>
                             </div>
                             <h3 class="woocommerce-loop-product__title">
-                                <a title="{{$collections->name}}" href="https://goocchohaanh.com/bo-suu-tap/bo-suu-tap-sofa-tan-co-dien-dlouis/">
+                                <a title="{{$collections->name}}" href="{{route('bo-suu-tap-details', $collections->slug)}}">
                                     {{$collections->name}}
                                 </a>
                             </h3>

@@ -56,7 +56,7 @@
                                         <div class="col-md-6">
                                             <div class="item-product procudr-hot">
                                                 <div class="image-product">
-                                                    <a class="img" href="https://goocchohaanh.com/anh-huan-biet-thu-thanh-pho-lao-cai/" title="{{$post_project2->name}}">
+                                                    <a class="img" href="{{route('du-an-details', $post_project2->slug)}}" title="{{$post_project2->name}}">
                                                         <noscript>
                                                             <img width="100%" height="100%" alt=""
                                                                  decoding="async"
@@ -75,7 +75,7 @@
                                                     </a>
                                                 </div>
                                                 <h3 class="title_pro_slider">
-                                                    <a href="https://goocchohaanh.com/anh-huan-biet-thu-thanh-pho-lao-cai/" title="{{$post_project2->name}}">
+                                                    <a href="{{route('du-an-details', $post_project2->slug)}}" title="{{$post_project2->name}}">
                                                         {{$post_project2->name}}
                                                     </a>
                                                 </h3>

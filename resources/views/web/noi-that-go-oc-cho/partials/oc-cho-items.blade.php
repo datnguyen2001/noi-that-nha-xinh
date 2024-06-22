@@ -16,7 +16,7 @@
                 <li class="product type-product post-7896 status-publish first instock product_cat-phong-khach-go-oc-cho product_cat-sofa-go-oc-cho has-post-thumbnail shipping-taxable product-type-simple">
                     <div class="wrap-product">
                         <div class="image-product">
-                            <a class="img hover-zoom"  href="https://goocchohaanh.com/product/sofa-go-oc-cho-tu-nhien-hk-60025/" title="{{$pro->name}}">
+                            <a class="img hover-zoom" href="{{route('product-detail', $pro->slug)}}" title="{{$pro->name}}">
                                 <img width="100%" height="100%"
                                      alt="" decoding="async" fetchpriority="high"
                                      data-srcset="{{asset($pro->src)}}"
@@ -28,7 +28,7 @@
                         </div>
                         <h3 class="woocommerce-loop-product__title">
                             <a title="{{$pro->name}}"
-                               href=" https://goocchohaanh.com/product/sofa-go-oc-cho-tu-nhien-hk-60025/ ">
+                               href="{{route('product-detail', $pro->slug)}}">
                                {{$pro->name}}
                             </a>
                         </h3>

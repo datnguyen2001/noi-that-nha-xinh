@@ -78,14 +78,14 @@
         </a>
         <div class="logo_mobile">
             <noscript><img decoding="async" alt="logo" width="100%" height="100%"
-                           data-src="{{asset('assets/images/logo-haanh.png')}}"
+                           data-src="{{asset(@$setting->logo)}}"
                            class="lazyload"
-                           src="{{asset('assets/images/logo-haanh.png')}}">
+                           src="{{asset(@$setting->logo)}}">
             </noscript>
             <img decoding="async" alt="logo" width="100%" height="100%"
-                 data-src="{{asset('assets/images/logo-haanh.png')}}"
+                 data-src="{{asset(@$setting->logo)}}"
                  class="lazyloaded"
-                 src="{{asset('assets/images/logo-haanh.png')}}"></div>
+                 src="{{asset(@$setting->logo)}}"></div>
     </div>
     <nav id="site-navigation" class="main-navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <div class="mobilenav__inner">
