@@ -23,8 +23,13 @@
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/web/css/all.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/web/css/header.css') }}">
@@ -42,6 +47,31 @@
 
 @include('web.partials.footer')
 
+<div class="social-right-fixed"><a href="{{route('hot-sale')}}" class="btn_sale">Sale</a><a
+        href="https://zalo.me/{{@$setting->zalo}}" target="_blank" class="zalo_chat" rel="nofollow">
+        <noscript><img data-src='{{asset('assets/images/iconzalo.png')}}'
+                       class='lazyload'
+                       src='{{asset('assets/images/iconzalo.png')}}'></noscript>
+        <img data-src="{{asset('assets/images/iconzalo.png')}}"
+             class="lazy entered loaded ls-is-cached lazyloaded"
+             src="{{asset('assets/images/iconzalo.png')}}"
+             data-ll-status="loaded" loading="lazy"><span id="mxh_zalo">Chat Zalo</span></a><a
+        href="mailto:{{@$setting->email}}" target="_blank">
+        <noscript><img data-src='{{asset('assets/images/iconmail.png')}}'
+                       class='lazyload'
+                       src='{{asset('assets/images/iconmail.png')}}'></noscript>
+        <img data-src="{{asset('assets/images/iconmail.png')}}"
+             class="lazy entered loaded ls-is-cached lazyloaded"
+             src="{{asset('assets/images/iconmail.png')}}"
+             data-ll-status="loaded" loading="lazy"><span id="mxh_ytb">Gửi thư liên hệ</span></a><a
+        href="tel:{{@$setting->phone}}" target="_blank">
+        <noscript><img data-src='{{asset('assets/images/iconphone.png')}}'
+                       class='lazyload'
+                       src='{{asset('assets/images/iconphone.png')}}'></noscript>
+        <img data-src="{{asset('assets/images/iconphone.png')}}"
+             class="lazy entered loaded ls-is-cached lazyloaded"
+             src="{{asset('assets/images/iconphone.png')}}"
+             data-ll-status="loaded" loading="lazy"><span id="mxh_ytb">Gọi điện liên hệ</span></a></div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
