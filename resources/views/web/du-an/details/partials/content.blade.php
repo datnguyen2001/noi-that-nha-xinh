@@ -3,9 +3,13 @@
         <div class="box_content_post_news">
             <div class="chitietbaiviet">
                 <div class="content_post_view">
+                    @php
+                        $formattedDate = \Carbon\Carbon::parse($detailProject->created_at)->format('h:i A d/m/Y');
+                        $formattedDate = str_replace(['AM', 'PM'], ['sáng', 'chiều'], $formattedDate);
+                    @endphp
                     <div class="entry-meta">
-                        <span class="entry-time"><i class="flat flat-calendar"></i> 5:27 chiều 20/09/2023</span>
-                        <span class="entry-view"><i class="flat flat-clock"></i> 582 lượt xem</span>
+                        <span class="entry-time"><i class="flat flat-calendar"></i> {{$formattedDate}}</span>
+{{--                        <span class="entry-view"><i class="flat flat-clock"></i> 582 lượt xem</span>--}}
                     </div>
                     <div class="entry-content">
                         <p>&nbsp;</p>
