@@ -9,7 +9,7 @@ use App\Http\Controllers\web\OrderController;
 use App\Http\Controllers\web\PhongThoController;
 use App\Http\Controllers\web\VideoController;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\Web\HomeController;
+use \App\Http\Controllers\web\HomeController;
 
 /*
 |--------------------------------------------------------------------------
