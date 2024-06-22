@@ -856,6 +856,7 @@ div.product .woocommerce-tabs ul.tabs {
 }
 img.attachment-full.size-full, img.wp-post-image.attachment-large {
     max-height: 245px;
+    min-height: 245px;
     object-fit: cover;
 }
 
@@ -910,6 +911,97 @@ img.attachment-full.size-full, img.wp-post-image.attachment-large {
     padding: 0.5rem 2.8125rem;
     text-transform: uppercase;
     float: right;
+}
+.devvn-popup-title{
+    background: linear-gradient(to bottom, #c69a39 0%, #c19a4b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c69a39',endColorstr='#c19a4b',GradientType=0);
+    color: #fff;
+    height: 42px;
+    line-height: 42px;
+    padding-left: 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    position: relative;
+}
+.devvn-popup-title span {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.devvn-popup-content {
+    padding: 10px;
+}
+.devvn-popup-content-left {
+    width: 50%;
+    float: left;
+    padding-right: 10px;
+}
+.devvn-popup-content-right {
+    width: 50%;
+    float: right;
+    padding-left: 10px;
+}
+.devvn-popup-prod {
+    display: table;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.devvn_prod_variable {
+    margin: 0 0 20px;
+}
+.devvn-popup-img {
+    display: flex;
+    justify-content: center;
+    float: none;
+    vertical-align: middle;
+    margin: 0;
+}
+.devvn-popup-info {
+    display: table-cell;
+    float: none;
+    overflow: inherit;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+span.devvn_title {
+    font-size: 18px;
+    color: #333;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+span.devvn_price {
+    font-size: 16px;
+    color: red;
+    font-weight: 700;
+    padding-bottom: 5px;
+    display: block;
+}
+.popup-customer-info-title {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.popup-customer-info-group {
+    width: 100%;
+    margin-bottom: 6px;
+}
+.popup-customer-info-group .devvn-order-btn {
+    width: 100%;
+    height: 36px;
+    background: #c69a39;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 @media only screen and (max-width: 93.75rem) {

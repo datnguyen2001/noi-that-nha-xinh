@@ -1,44 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Web;
+namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
-use App\Models\AdvertisementModel;
-use App\Models\AdvertisementProductModel;
-use App\Models\AlbumModel;
 use App\Models\BannerModel;
-use App\Models\Category;
 use App\Models\CategoryModel;
-use App\Models\CollectionImageModel;
-use App\Models\CollectionModel;
-use App\Models\CollectionProductModel;
 use App\Models\CommentModel;
-use App\Models\ContactUsModel;
-use App\Models\FooterBlog;
 use App\Models\HeaderModel;
 use App\Models\NewModel;
 use App\Models\PostCollectionModel;
 use App\Models\PostProjectModel;
-use App\Models\PostsModel;
-use App\Models\Product;
-use App\Models\ProductCategory;
-use App\Models\ProductInterestModel;
 use App\Models\ProductModel;
-use App\Models\ProjectImageModel;
 use App\Models\ProjectModel;
-use App\Models\ReviewFeedbackModel;
-use App\Models\Searches;
-use App\Models\ReviewImageModel;
-use App\Models\ReviewModel;
 use App\Models\StoreIntroduceModel;
-use App\Models\StylingImageModel;
-use App\Models\StylingModel;
-use App\Models\StylingProductModel;
 use App\Models\SupportModel;
 use App\Models\VideoModel;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
