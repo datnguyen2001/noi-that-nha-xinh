@@ -18,7 +18,7 @@
                                 <div class="star">
                                     @for($i=1;$i<6;$i++)
                                         @if($i <= $comments->star)
-                                    <i class="flat flat-star"></i>
+                                            <i class="fa-solid fa-star" style="background-color: transparent;color: #ffe97d;font-size: 20px"></i>
                                         @endif
                                    @endfor
                                 </div>
