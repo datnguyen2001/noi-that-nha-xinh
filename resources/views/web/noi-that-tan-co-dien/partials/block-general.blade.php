@@ -216,10 +216,6 @@
                     settings: {slidesToShow: a, slidesToScroll: 1}
                 }, {breakpoint: 576, settings: {slidesToShow: o, slidesToScroll: 1}},]
             })
-        }), jQuery(".navbar #showmenu").click(function () {
-            jQuery("body").toggleClass("show-menu-mobile"), jQuery(".main-navigation").toggleClass("opened"), jQuery(".panel-overlay").toggleClass("active"), jQuery(".hamburger", this).toggleClass("is-active")
-        }), jQuery(".panel-overlay,.menu_close").click(function () {
-            jQuery(".main-navigation").toggleClass("opened"), jQuery(".panel-overlay").removeClass("active"), jQuery(".navbar #showmenu .hamburger").removeClass("is-active"), jQuery("body").toggleClass("show-menu-mobile")
         }), jQuery(".main-navigation ul.sub-menu").before('<span class="arrow"></span>'), jQuery("body").on("click", ".main-navigation .arrow", function () {
             jQuery(this).parent("li").toggleClass("open"), jQuery(this).parent("li").find("ul.sub-menu").first().slideToggle("normal")
         }), jQuery("input").attr("autocomplete", "off"), jQuery(window).bind("scroll", function () {

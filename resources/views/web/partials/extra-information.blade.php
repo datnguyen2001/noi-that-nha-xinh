@@ -5,14 +5,14 @@
         <ul class="list-post-item">
             @foreach($list_new as $news)
             <li id="post-2986" class="clearfix post-2986 post type-post status-publish format-standard has-post-thumbnail hentry category-khuyen-mai category-bai-viet-noi-bat">
-                <a class="img alignleft" href="{{route('phong-cach-noi-that')}}" title="{{$news->name}}">
+                <a class="img alignleft" href="{{route('khuyen-mai-details', $news->slug)}}" title="{{$news->name}}">
                     <img width="100%" height="100%"   alt="{{$news->name}}" decoding="async"
                          data-srcset="{{asset($news->src)}}"
                          class="attachment-sh_thumb300x200 size-sh_thumb300x200 wp-post-image lazyloaded"
                          src="{{asset($news->src)}}" />
                 </a>
                 <h3>
-                    <a href="{{route('phong-cach-noi-that')}}"
+                    <a href="{{route('khuyen-mai-details', $news->slug)}}"
                        title="{{$news->name}}">
                         {{$news->name}}
                     </a>

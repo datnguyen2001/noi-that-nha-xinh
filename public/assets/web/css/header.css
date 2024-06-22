@@ -638,10 +638,6 @@ span#mxh_ytb {
         flex-wrap: nowrap
     }
 
-    body.show-menu-mobile {
-        overflow: hidden
-    }
-
     .main-navigation {
         display: none;
         background: #442b19;
