@@ -48,6 +48,8 @@
         </div>
     </div>
 </div>
+@include('web.product-details.partials.lien-he-dat-hang')
+
 @endsection
 <style>
     .modal-dialog-centered {
@@ -68,6 +70,47 @@
     .greyed-out {
         opacity: 0.5 !important;
     }
+    .devvn-popup-quickbuy {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1000; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        justify-content: center
+    }
+
+    .devvn-popup-inner {
+        min-height: 200px;
+        min-width: 300px;
+        top: 50%;
+        left: 50%;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 1);
+        border-radius: 4px 4px 0 0;
+        -moz-border-radius: 4px 4px 0 0;
+        -webkit-border-radius: 4px 4px 0 0;
+        background: #fff;
+        overflow: hidden;
+        height: fit-content;
+        margin-top: 30px;
+    }
+    .devvn-popup-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .devvn-popup-close {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -110,4 +153,25 @@
             $(this).removeClass('greyed-out');
         });
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const buyNowLink = document.querySelector('.devvn_buy_now');
+        const popup = document.getElementById('popup_content_order');
+        const closeBtn = popup.querySelector('.devvn-popup-close');
+
+        buyNowLink.addEventListener('click', function () {
+            popup.style.display = 'flex';
+        });
+
+        closeBtn.addEventListener('click', function () {
+            popup.style.display = 'none';
+        });
+
+        window.addEventListener('click', function (event) {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    });
+
 </script>

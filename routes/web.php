@@ -5,6 +5,7 @@ use App\Http\Controllers\web\ContactController;
 use App\Http\Controllers\web\DuAnController;
 use App\Http\Controllers\web\NoiThatTanCoDienController;
 use App\Http\Controllers\web\NoiThatGoOcChoController;
+use App\Http\Controllers\web\OrderController;
 use App\Http\Controllers\web\PhongThoController;
 use App\Http\Controllers\web\VideoController;
 use Illuminate\Support\Facades\Route;
@@ -52,3 +53,4 @@ Route::post('/dang-ky-nhan-thong-tin', [ContactController::class, 'submitForm'])
 Route::get('/video-detail/{slug}', [VideoController::class, 'videoDetail'])->name('video-detail');
 Route::get('du-an-details/{slug}', [DuAnController::class, 'duAnDetails'])->name('du-an-details');
 Route::get('bo-suu-tap-details/{slug}', [BoSuuTapController::class, 'boSuuTapDetails'])->name('bo-suu-tap-details');
+Route::post('order', [OrderController::class, 'submitOrder'])->name('order');
