@@ -54,6 +54,5 @@
                 </section>
             </main>
         </div>
-        <script data-two_delay_src='inline' data-two_delay_id="two_666c2e6f3e170"></script>
     </div>
 @stop

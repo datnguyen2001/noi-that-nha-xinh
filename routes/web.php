@@ -10,6 +10,7 @@ use App\Http\Controllers\web\PhongThoController;
 use App\Http\Controllers\web\VideoController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\web\HomeController;
+use \App\Http\Controllers\web\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ use \App\Http\Controllers\web\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('/camera-video' , [HomeController::class, 'cameraVideo'])->name('cameraVideo');
+Route::get('/thanh-toan' , [HomeController::class, 'pay'])->name('pay');
 Route::get('/lien-he' , [HomeController::class, 'contact'])->name('lien-he');
 Route::get('/video' , [HomeController::class, 'introduction'])->name('introduction');
 Route::get('/hot-sale' , [HomeController::class, 'hotSale'])->name('hot-sale');
@@ -31,6 +32,10 @@ Route::get('menu/{slug}', [NoiThatGoOcChoController::class, 'menu'])->name('menu
 Route::get('danh-muc/{slug}', [NoiThatGoOcChoController::class, 'category'])->name('category');
 Route::get('danh-muc-san-pham/{slug}', [NoiThatGoOcChoController::class, 'categoryProduct'])->name('category-product');
 Route::get('/product-detail/{slug}', [NoiThatGoOcChoController::class, 'productDetails'])->name('product-detail');
+Route::get('getCart', [CartController::class, 'index'])->name('cart.index');
+Route::post('addToCart', [CartController::class, 'addToCart'])->name('cart.store');
+Route::put('updateCartQuantity', [CartController::class, 'updateCartQuantity'])->name('cart.update');
+Route::post('removeProductInCart', [CartController::class, 'remove'])->name('cart.remove');
 
 Route::group(['prefix' => 'du-an', 'as' => 'du-an.'], function () {
     Route::get('/', [DuAnController::class, 'duAn'])->name('index');
@@ -56,3 +61,4 @@ Route::get('/video-detail/{slug}', [VideoController::class, 'videoDetail'])->nam
 Route::get('du-an-details/{slug}', [DuAnController::class, 'duAnDetails'])->name('du-an-details');
 Route::get('bo-suu-tap-details/{slug}', [BoSuuTapController::class, 'boSuuTapDetails'])->name('bo-suu-tap-details');
 Route::post('order', [OrderController::class, 'submitOrder'])->name('order');
+Route::post('order-product', [OrderController::class, 'submitOrderProduct'])->name('order-product');

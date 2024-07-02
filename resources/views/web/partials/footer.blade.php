@@ -130,12 +130,3 @@
     </div><!-- .site-info -->
     <p id="back-top"><a href="#top" target="_blank"><span></span></a></p>
 </footer>
-<script>
-    $(document).ready(function(){
-        $('#back-top a').click(function(event) {
-            event.preventDefault();
-            $('html, body').animate({ scrollTop: 0 }, 'slow');
-            return false;
-        });
-    });
-</script>

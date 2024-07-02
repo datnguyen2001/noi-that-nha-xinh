@@ -62,12 +62,12 @@
                                 <textarea class="order-note form-control" name="order-note" placeholder="Ghi chú đơn hàng (Không bắt buộc)"></textarea>
                             </div>
                         </div>
-                        <div class="popup-customer-info-group">
-                            <div class="popup-customer-info-item-1 popup_quickbuy_shipping">
-                                <div class="popup_quickbuy_shipping_title">Tổng:</div>
-                                <div class="popup_quickbuy_total_calc">{{$productDetails->price}} ₫</div>
-                            </div>
-                        </div>
+{{--                        <div class="popup-customer-info-group">--}}
+{{--                            <div class="popup-customer-info-item-1 popup_quickbuy_shipping">--}}
+{{--                                <div class="popup_quickbuy_shipping_title">Tổng:</div>--}}
+{{--                                <div class="popup_quickbuy_total_calc">{{$productDetails->price}} ₫</div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <div class="popup-customer-info-group">
                             <div class="popup-customer-info-item-1">
                                 <input type="hidden" name="product_id" value="{{ $productDetails->id }}">

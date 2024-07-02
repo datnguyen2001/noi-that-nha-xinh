@@ -49,8 +49,8 @@ class HomeController extends Controller
 
         return view('web.hot-sale.index',compact('product_sale','banner_sale'));
     }
-    public function cameraVideo() {
-        return view('web.camera-video.index');
+    public function pay() {
+        return view('web.pay.index');
     }
     public function contact() {
         return view('web.contact.index');

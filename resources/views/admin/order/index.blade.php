@@ -37,6 +37,12 @@
                                             </td>
                                             <td>
                                                 {{$value->name_product}}
+                                                <br>
+                                                @if($value->quantity > 0)
+                                                Số lượng: {{$value->quantity}}
+                                                    @else
+                                                    Số lượng: Liên hệ
+                                                @endif
                                             </td>
                                             <td>
                                                 {{@$value->note}}

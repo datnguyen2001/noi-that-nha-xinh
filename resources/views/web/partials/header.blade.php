@@ -5,28 +5,20 @@
         <div class="container">
             <div class="site-branding">
                 <h1 class="site-title">
-                    <a href="{{route('home')}}" rel="home">Ha Anh Interior &#8211; Nội thất đồ gỗ óc chó cao cấp đẹp tại Việt Nam</a>
+                    <a href="{{route('home')}}" rel="home">Nhà xinh; Nội thất đồ gỗ óc chó cao cấp đẹp tại Việt Nam</a>
                 </h1>
             </div>
 
             <div class="header-content">
-{{--                <a id="showmenu-header" class="d-lg-none">--}}
-{{--                    <span class="hamburger hamburger--collapse">--}}
-{{--                        <span class="hamburger-box">--}}
-{{--                            <span class="hamburger-inner"></span>--}}
-{{--                        </span>--}}
-{{--                    </span>--}}
-{{--                </a>--}}
                 <div class="row align-items-center">
-                    <div class="col-md-3">
-                        <div class="camera_block">
-                            <a href="{{route('cameraVideo')}}">Camera 360
-{{--                                <i class="fas fa fa-globe"></i>--}}
+                    <div class="col-md-3" style="z-index: 10">
+                        <div class="video_block">
+                            <a href="{{route('introduction')}}">
+                                Trải nghiệm video
                             </a>
                         </div>
                         <div class="lien_he">
                             <a href="{{route('lien-he')}}">
-{{--                                <i class="fas fa-envelope"></i> --}}
                                 ĐĂNG KÝ NHẬN ƯU ĐÃI
                             </a>
                         </div>
@@ -48,15 +40,13 @@
                                      src="{{asset(@$setting->logo)}}"></a>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="video_block">
-                            <a href="{{route('introduction')}}">
-                                Trải nghiệm video
-                            </a>
+                    <div class="col-md-3" style="z-index: 10">
+                        <div class="camera_block" data-bs-toggle="offcanvas"
+                             data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            <a class="cart">Giỏ hàng</a>
                         </div>
                         <div class="information-phone">
                             <a href="tel:{{@$setting->hotline}}">
-{{--                                <i class="fas fa-phone"></i>--}}
                                 <span>Hotline:{{@$setting->hotline}}</span>
                             </a>
                         </div>
@@ -126,74 +116,6 @@
                         </li>
                             @endforeach
                         @endif
-{{--                        <li id="menu-item-6736" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-6736">--}}
-{{--                            <a href="{{ route('noi-that-tan-co-dien.home') }}">Nội thất tân cổ điển</a>--}}
-{{--                            <ul class="sub-menu">--}}
-{{--                                <li id="menu-item-11232" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-11232">--}}
-{{--                                    <a href="{{ route('noi-that-tan-co-dien.phong-khach.index') }}">Phòng Khách Tân Cổ Điển</a>--}}
-{{--                                    <ul class="sub-menu">--}}
-{{--                                        <li id="menu-item-11233" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11233">--}}
-{{--                                            <a href="{{ route('noi-that-tan-co-dien.phong-khach.sofa') }}">Sofa tân cổ điển</a>--}}
-{{--                                        </li>--}}
-{{--                                        <li id="menu-item-11234" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11234">--}}
-{{--                                            <a href="{{ route('noi-that-tan-co-dien.phong-khach.ban-tra') }}">Bàn trà tân cổ điển</a>--}}
-{{--                                        </li>--}}
-{{--                                        <li id="menu-item-11235" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11235">--}}
-{{--                                            <a href="{{ route('noi-that-tan-co-dien.phong-khach.ke-tivi') }}">Kệ tivi tân cổ điển</a>--}}
-{{--                                        </li>--}}
-{{--                                    </ul>--}}
-{{--                                </li>--}}
-{{--                                <li id="menu-item-11240" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-11240">--}}
-{{--                                    <a href="{{ route('noi-that-tan-co-dien.phong-bep.index') }}">Phòng Bếp Tân Cổ Điển</a>--}}
-{{--                                    <ul class="sub-menu">--}}
-{{--                                        <li id="menu-item-11241" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11241">--}}
-{{--                                            <a href="{{ route('noi-that-tan-co-dien.phong-bep.ban-ghe-an') }}">Bàn ghế ăn tân cổ điển</a>--}}
-{{--                                        </li>--}}
-{{--                                        <li id="menu-item-11242" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11242">--}}
-{{--                                            <a href="{{ route('noi-that-tan-co-dien.phong-bep.tu-bep') }}">Tủ bếp tân cổ điển</a>--}}
-{{--                                        </li>--}}
-{{--                                        <li id="menu-item-11243" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11243">--}}
-{{--                                            <a href="{{ route('noi-that-tan-co-dien.phong-bep.quay-bar') }}">Quầy bar tân cổ điển</a>--}}
-{{--                                        </li>--}}
-{{--                                        <li id="menu-item-11244" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11244">--}}
-{{--                                            <a href="{{ route('noi-that-tan-co-dien.phong-bep.tu-ruou') }}">Tủ rượu tân cổ điển</a>--}}
-{{--                                        </li>--}}
-{{--                                    </ul>--}}
-{{--                                </li>--}}
-{{--                                <li id="menu-item-11236" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-11236">--}}
-{{--                                    <a href="{{ route('noi-that-tan-co-dien.phong-ngu.index') }}">Phòng Ngủ Tân Cổ Điển</a>--}}
-{{--                                    <ul class="sub-menu">--}}
-{{--                                        <li id="menu-item-11237" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11237">--}}
-{{--                                            <a href="{{ route('noi-that-tan-co-dien.phong-ngu.giuong-ngu') }}">Giường ngủ tân cổ điển</a>--}}
-{{--                                        </li>--}}
-{{--                                        <li id="menu-item-11238" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11238">--}}
-{{--                                            <a href="{{ route('noi-that-tan-co-dien.phong-ngu.ban-trang-diem') }}">Bàn trang điểm tân cổ điển</a>--}}
-{{--                                        </li>--}}
-{{--                                        <li id="menu-item-11239" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-11239">--}}
-{{--                                            <a href="{{ route('noi-that-tan-co-dien.phong-ngu.tu-quan-ao') }}">Tủ áo tân cổ điển</a>--}}
-{{--                                        </li>--}}
-{{--                                    </ul>--}}
-{{--                                </li>--}}
-{{--                                <li id="menu-item-6339" class="menu-item menu-item-type-taxonomy menu-item-object-dich_vu menu-item-6339">--}}
-{{--                                    <a href="{{ route('noi-that-tan-co-dien.tu-van') }}">Tư vấn</a>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </li>--}}
-{{--                        <li id="menu-item-8783"--}}
-{{--                            class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-8783">--}}
-{{--                            <a href="{{route('phong-tho.ban-tho')}}">Phòng Thờ</a>--}}
-{{--                            <ul class="sub-menu">--}}
-{{--                                <li id="menu-item-6737"--}}
-{{--                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-6737">--}}
-{{--                                    <a href="{{route('phong-tho.ban-tho')}}">Bàn Thờ</a></li>--}}
-{{--                                <li id="menu-item-6738"--}}
-{{--                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-6738">--}}
-{{--                                    <a href="{{route('phong-tho.don-tho')}}">Đôn thờ</a></li>--}}
-{{--                                <li id="menu-item-6739"--}}
-{{--                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-6739">--}}
-{{--                                    <a href="{{route('phong-tho.vach-tho')}}">Vách thờ</a></li>--}}
-{{--                            </ul>--}}
-{{--                        </li>--}}
                         <li id="menu-item-1600" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1600">
                             <a href="{{route('du-an.index')}}">Dự án</a>
                             @if(isset($project) && count($project)>0)
@@ -237,3 +159,14 @@
         </div>
     </nav>
 </header>
+
+<div class="offcanvas offcanvas-end box-offcanvas-attribute" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" >
+    <div class="offcanvas-header header_cart" >
+        <h5 class="offcanvas-title text-center w-100 text-white" id="offcanvasRightLabel" style="padding-left: 20px">Giỏ hàng</h5>
+        <button type="button" class="btn-close-cart" data-bs-dismiss="offcanvas" aria-label="Close"><i
+                class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="offcanvas-body list_carts" style="z-index: 2000000">
+
+    </div>
+</div>

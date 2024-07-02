@@ -57,11 +57,16 @@
                     <span class="d-block"> Thông tin liên hệ </span>
                 </h3>
                 <div class="price_pro">
+                    @if(isset($productDetails->price) || isset($productDetails->price_promotional))
+                    <p class="price_regular text-white">Giá Bán: <del><span class="woocommerce-Price-amount amount"><bdi>{{number_format($productDetails->price)}}<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></del></p>
+                    <p class="price_sale text-white">Giá KM: <ins><span class="woocommerce-Price-amount amount"><bdi>{{number_format($productDetails->price_promotional)}}<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></ins></p>
+                    @else
                     <p class="price_regular i3">Giá:
                         <ins>
-                            {{ isset($productDetails->price) ? number_format($productDetails->price, 0, ',', '.') . ' VNĐ' : 'Liên hệ' }}
+                            Liên hệ
                         </ins>
                     </p>
+                        @endif
                 </div>
                 <table class="shop_attributes">
                     <tr>
@@ -105,10 +110,17 @@
                         </td>
                     </tr>
                 </table>
+                @if($productDetails->pricing == 1)
                 <a href="javascript:void(0);" class="devvn_buy_now devvn_buy_now_style" data-id="2439">
                     <strong>Liên hệ đặt hàng</strong>
                     <span>Liên hệ ngay với chúng tôi và giao hàng tận nơi</span>
                 </a>
+                    @else
+                <a class="btn-add-cart devvn_buy_now_style" data-product-id = "{{$productDetails->id}}">
+                    <strong>Thêm vào giỏ hàng</strong>
+                    <span>Liên hệ ngay với chúng tôi và giao hàng tận nơi</span>
+                </a>
+                @endif
             </div>
         </div>
     </div>

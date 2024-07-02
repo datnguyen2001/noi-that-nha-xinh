@@ -52,8 +52,13 @@
                                         </a>
                                     </h3>
                                     <div class="price_pro">
+                                        @if($sale->price || $sale->price_promotional )
+                                            <p class="price_sale mb-1">Giá Bán: <del><span class="woocommerce-Price-amount amount"><bdi>{{number_format($sale->price)}}<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></del></p>
+                                            <p class="price_sale">Giá KM: <ins><span class="woocommerce-Price-amount amount"><bdi>{{number_format($sale->price_promotional)}}<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></ins></p>
+                                        @else
                                         <p class="price_regular i3">@if($sale->pricing == 1)Giá: <ins>Liên hệ</ins>@endif
                                         </p>
+                                            @endif
                                     </div>
                                 </div>
                             </li>

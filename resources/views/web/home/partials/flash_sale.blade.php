@@ -1,18 +1,6 @@
 @if(isset($product_sale) && count($product_sale)>0)
 <div class="container">
-    <div class="col-lg-6 col-12 box_heading"><h2 class="heading">Flash Sale</h2>
-        <div id="showTime">
-            <div class="showTime-item">
-                <span class="days" id="day"></span>
-                <span class="smalltext">Ngày</span>
-                <span class="hours" id="hour"></span>
-                <span class="smalltext">Giờ</span>
-                <span class="minutes" id="minute"></span>
-                <span class="smalltext">Phút</span>
-                <span class="seconds" id="second"></span>
-                <span class="smalltext">Giây</span></div>
-        </div>
-        <script data-two_delay_src='inline' data-two_delay_id="two_666c2e6f3e0d6"></script>
+    <div class="col-lg-6 col-12 box_heading"><h2 class="heading">Sản phẩm Sale sốc</h2>
     </div>
     <div class="sale-wrap">
         <div class="product-categories sh-product-shortcode">
@@ -32,7 +20,12 @@
                             </a>
                         </h3>
                         <div class="price_pro">
+                            @if($pro->price || $pro->price_promotional )
+                                <p class="price_sale mb-1">Giá Bán: <del><span class="woocommerce-Price-amount amount"><bdi>{{number_format($pro->price)}}<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></del></p>
+                                <p class="price_sale">Giá KM: <ins><span class="woocommerce-Price-amount amount"><bdi>{{number_format($pro->price_promotional)}}<span class="woocommerce-Price-currencySymbol">₫</span></bdi></span></ins></p>
+                            @else
                             <p class="price_regular i3">@if($pro->pricing == 1)Giá: <ins>Liên hệ</ins>@endif</p>
+                                @endif
                         </div>
                     </div>
                 </li>
