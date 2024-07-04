@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->longText('address')->nullable();
             $table->longText('note')->nullable();
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

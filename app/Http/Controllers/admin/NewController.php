@@ -15,7 +15,11 @@ class NewController extends Controller
         $titlePage = 'Danh sách tin tức';
         $page_menu = 'new';
         $page_sub = null;
-        $listData = NewModel::orderBy('created_at', 'desc')->paginate(15);
+        if (isset($request->key_search)) {
+            $listData = NewModel::where('name', 'like', '%' . $request->get('key_search') . '%')->paginate(15);
+        }else{
+            $listData = NewModel::orderBy('created_at', 'desc')->paginate(15);
+        }
 
         return view('admin.new.index', compact('titlePage', 'page_menu', 'page_sub', 'listData'));
     }

@@ -62,12 +62,16 @@ class CollectionController extends Controller
         }
     }
 
-    public function info()
+    public function info(Request $request)
     {
         $titlePage = 'Danh sách';
         $page_menu = 'collection';
         $page_sub = 'list';
-        $listData = PostCollectionModel::orderBy('created_at', 'desc')->paginate(10);
+        if (isset($request->key_search)) {
+            $listData = PostCollectionModel::where('name', 'like', '%' . $request->get('key_search') . '%')->paginate(15);
+        }else{
+            $listData = PostCollectionModel::orderBy('created_at', 'desc')->paginate(15);
+        }
 
         return view('admin.collection.index', compact('titlePage', 'page_menu', 'page_sub', 'listData'));
     }

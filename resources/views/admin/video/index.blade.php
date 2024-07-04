@@ -11,6 +11,15 @@
                                 <a class="btn btn-success"
                                    href="{{route('admin.video.create')}}">Thêm video</a>
                             </div>
+                            <div class="d-flex justify-content-end mb-4">
+                                <form class="d-flex align-items-center w-50" method="get"
+                                      action="{{route('admin.video.index')}}">
+                                    <input name="key_search" type="text" value="{{request()->get('key_search')}}"
+                                           placeholder="Tìm kiếm tên video" class="form-control" style="margin-right: 16px">
+                                    <button class="btn btn-info" style="padding-top: 5px;padding-bottom: 5px"><i class="bi bi-search"></i></button>
+                                    <a href="{{route('admin.video.index')}}" class="btn btn-danger" style="margin-left: 15px">Hủy </a>
+                                </form>
+                            </div>
                             <table class="table">
                                 <thead class="thead-dark">
                                 <tr>

@@ -64,12 +64,16 @@ class ProjectController extends Controller
         }
     }
 
-    public function info()
+    public function info(Request $request)
     {
         $titlePage = 'Danh sách dự án';
         $page_menu = 'project';
         $page_sub = 'list';
-        $listData = PostProjectModel::orderBy('created_at', 'desc')->paginate(15);
+        if (isset($request->key_search)) {
+            $listData = PostProjectModel::where('name', 'like', '%' . $request->get('key_search') . '%')->paginate(15);
+        }else{
+            $listData = PostProjectModel::orderBy('created_at', 'desc')->paginate(15);
+        }
         foreach ($listData as $val){
             $val->name_category = ProjectModel::find($val->project_id)->name;
         }

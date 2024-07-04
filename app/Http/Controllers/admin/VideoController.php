@@ -10,12 +10,16 @@ use Illuminate\Support\Str;
 
 class VideoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $titlePage = 'Danh sách video';
         $page_menu = 'video';
         $page_sub = null;
-        $listData = VideoModel::orderBy('created_at', 'desc')->paginate(10);
+        if (isset($request->key_search)) {
+            $listData = VideoModel::where('name', 'like', '%' . $request->get('key_search') . '%')->paginate(15);
+        }else{
+            $listData = VideoModel::orderBy('created_at', 'desc')->paginate(10);
+        }
 
         return view('admin.video.index', compact('titlePage', 'page_menu', 'page_sub', 'listData'));
     }

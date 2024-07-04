@@ -16,6 +16,7 @@ class OrderModel extends Model
         'phone',
         'email',
         'address',
-        'note'
+        'note',
+        'status'
     ];
 }

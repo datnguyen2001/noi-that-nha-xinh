@@ -46,16 +46,35 @@ class DashboardController extends Controller
         return view('admin.information.index',compact('titlePage','page_menu','page_sub','listData'));
     }
 
-    public function order()
+    public function order(Request $request)
     {
         $titlePage = 'Danh sách đơn hàng';
         $page_menu = 'order';
         $page_sub = null;
-        $listData = OrderModel::orderBy('created_at','desc')->paginate(15);
+        if (isset($request->key_search)) {
+            $listData = OrderModel::where('name', 'like', '%' . $request->get('key_search') . '%')->orWhere('phone', 'like', '%' . $request->get('key_search') . '%')->paginate(15);
+        }else {
+            $listData = OrderModel::orderBy('created_at', 'desc')->paginate(15);
+        }
         foreach ($listData as $val){
             $val->name_product = ProductModel::find($val->product_id)->name;
         }
 
         return view('admin.order.index',compact('titlePage','page_menu','page_sub','listData'));
+    }
+
+    public function statusOrder($order_id, $status)
+    {
+        try {
+                $order = OrderModel::find($order_id);
+                if ($order) {
+                    $order->status = $status;
+                    $order->save();
+                    return \redirect()->route('admin.order')->with(['success' => 'Xét trạng thái đơn hàng thành công']);
+                }
+
+        } catch (\Exception $exception) {
+            dd($exception);
+        }
     }
 }

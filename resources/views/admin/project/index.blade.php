@@ -11,6 +11,15 @@
                                 <a class="btn btn-success"
                                    href="{{route('admin.project.create-info')}}">Thêm dự án</a>
                             </div>
+                            <div class="d-flex justify-content-end mb-4">
+                                <form class="d-flex align-items-center w-50" method="get"
+                                      action="{{route('admin.project.info')}}">
+                                    <input name="key_search" type="text" value="{{request()->get('key_search')}}"
+                                           placeholder="Tìm kiếm tên dự án" class="form-control" style="margin-right: 16px">
+                                    <button class="btn btn-info" style="padding-top: 5px;padding-bottom: 5px"><i class="bi bi-search"></i></button>
+                                    <a href="{{route('admin.project.info')}}" class="btn btn-danger" style="margin-left: 15px">Hủy </a>
+                                </form>
+                            </div>
                             <table class="table text-nowrap">
                                 <thead class="thead-dark">
                                 <tr>

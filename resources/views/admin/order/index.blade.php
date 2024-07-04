@@ -9,6 +9,15 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <h5 class="card-title">{{$titlePage}}</h5>
                             </div>
+                            <div class="d-flex justify-content-end mb-4">
+                                <form class="d-flex align-items-center w-50" method="get"
+                                      action="{{route('admin.order')}}">
+                                    <input name="key_search" type="text" value="{{request()->get('key_search')}}"
+                                           placeholder="Tìm kiếm tên khách hàng và số điện thoại" class="form-control" style="margin-right: 16px">
+                                    <button class="btn btn-info" style="padding-top: 5px;padding-bottom: 5px"><i class="bi bi-search"></i></button>
+                                    <a href="{{route('admin.order')}}" class="btn btn-danger" style="margin-left: 15px">Hủy </a>
+                                </form>
+                            </div>
                             <table class="table text-nowrap">
                                 <thead class="thead-dark">
                                 <tr>
@@ -18,6 +27,8 @@
                                     <th scope="col">Sản phẩm</th>
                                     <th scope="col">Ghi chú</th>
                                     <th scope="col">Thời gian</th>
+                                    <th scope="col">Trạng thái</th>
+                                    <th scope="col">...</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -49,6 +60,21 @@
                                             </td>
                                             <td>
                                                 {{ \Carbon\Carbon::parse($value->created_at)->format('m/d/Y') }}
+                                            </td>
+                                            <td>
+                                                @if($value->status ==1)
+                                                    Đã xác nhận
+                                                    @elseif($value->status == 2)
+                                                    Đã hủy
+                                                @else
+                                                    Chờ xác nhận
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if($value->status ==0)
+                                                    <a href="{{url('admin/order-status/'.$value->id.'/1')}}" class="btn btn-success">Xác nhận</a>
+                                                    <a href="{{url('admin/order-status/'.$value->id.'/2')}}" class="btn btn-danger">Từ chối</a>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach
