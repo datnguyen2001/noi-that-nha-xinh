@@ -4,6 +4,7 @@ namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
 use App\Models\OrderModel;
+use App\Models\ProductModel;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -53,6 +54,9 @@ class OrderController extends Controller
                 $order->address = $request->get('customer-address');
                 $order->note = $request->get('order-note');
                 $order->save();
+                $product = ProductModel::find($cartItem['id']);
+                $product->quantity =  $product->quantity - $cartItem['quantity'];
+                $product->save();
             }
             toastr()->success('Đơn hàng của bạn đã được đặt thành công!');
             return redirect()->route('home')->withCookie(cookie()->forget('cartItems'));

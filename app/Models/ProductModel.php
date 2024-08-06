@@ -23,6 +23,7 @@ class ProductModel extends Model
         'price',
         'price_promotional',
         'pricing',
+        'quantity',
         'describe',
         'why_choose_us',
         'display',

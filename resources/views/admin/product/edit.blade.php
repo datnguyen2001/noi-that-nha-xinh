@@ -85,12 +85,18 @@
                             <input class="form-control" name="other_materials" value="{{$data->other_materials}}" type="text">
                         </div>
                     </div>
+                    <div class="row mt-3">
+                        <div class="col-3">Số lượng</div>
+                        <div class="col-8">
+                            <input class="form-control" name="quantity" value="{{$data->quantity}}" type="text">
+                        </div>
+                    </div>
                     <div class="row mb-3 mt-3">
                         <div class="col-3 d-flex align-items-center">
                             <p class="m-0 parameter_2">Giá bán</p>
                         </div>
                         <div class="col-9">
-                            <input class="form-control price format-currency" value="{{$data->price}}" name="price">
+                            <input class="form-control price format-currency" value="{{number_format($data->price)}}" name="price">
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -98,7 +104,7 @@
                             <p class="m-0 parameter_2">Giá khuyến mãi</p>
                         </div>
                         <div class="col-9">
-                            <input class="form-control price_promotional format-currency" value="{{$data->price_promotional}}" name="price_promotional">
+                            <input class="form-control price_promotional format-currency" value="{{number_format($data->price_promotional)}}" name="price_promotional">
                         </div>
                     </div>
                     <div class="row mt-3">

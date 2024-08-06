@@ -48,6 +48,10 @@
 .product-cart1 .box_gift {
     margin-top: 20px;
 }
+.img-responsive{
+    width: 150px;
+    object-fit: cover;
+}
 @media (max-width: 767px) {
     .product-cart1 .box_gift {
         margin-top: 0;

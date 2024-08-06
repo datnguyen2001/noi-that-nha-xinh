@@ -119,6 +119,7 @@
                     <div class="product-detail">
                         <div class="top_detail">
                             <a class="product-name-cart" href="${window.location.origin + '/san-pham/' + cartItem.slug}">${cartItem.name}</a>
+                            <p style="font-size: 15px;margin-bottom: 10px">Số lượng: ${cartItem.quantity}</p>
                             <div class="fee visibleCart-xs">
                                 <p class="price-item price_item_${index}">${formattedTotal}</p>
                                 <del class="old-price old_price_${index}">${formattedCost}</del>

@@ -73,6 +73,12 @@
                             <input class="form-control" name="other_materials" type="text">
                         </div>
                     </div>
+                    <div class="row mt-3">
+                        <div class="col-3">Số lượng</div>
+                        <div class="col-8">
+                            <input class="form-control" name="quantity" type="text">
+                        </div>
+                    </div>
                     <div class="row mb-3 mt-3">
                         <div class="col-3 d-flex align-items-center">
                             <p class="m-0 parameter_2">Giá bán</p>

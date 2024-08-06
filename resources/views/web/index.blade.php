@@ -99,6 +99,77 @@
 
 {{-- CART --}}
 <script>
+    $(document).ready(function () {
+        $(document).on("click", ".removeCartBtn", function () {
+            var productId = $(this).attr('data-value-id');
+
+            $.ajax({
+                url: '{{ route('cart.remove') }}',
+                type: 'POST',
+                data: {
+                    product_id: productId
+                },
+                headers: {
+                    'X-CSRF-TOKEN': `{{ csrf_token() }}`
+                },
+                success: function (response) {
+                    if (response.error == 0) {
+                        toastr.success(response.message);
+                        reloadSideBarCart();
+                        // reloadSideBarPay()
+                    }
+                },
+                error: function (xhr, status, error) {
+                    toastr.error(xhr.responseJSON.message);
+                }
+            });
+
+        });
+
+        //Handle cart quantity update
+        $(document).on('click', '.increaseBtn', increaseQuantity);
+        $(document).on('click', '.decreaseBtn', decreaseQuantity);
+
+        function increaseQuantity() {
+            var cartItemId = $(this).attr('data-value-id');
+            var quantity = parseInt($('#quantity_'+cartItemId).val());
+            quantity++;
+            updateCartQuantity(cartItemId, quantity);
+        }
+
+        function decreaseQuantity() {
+            var cartItemId =$(this).attr('data-value-id');
+            var quantity = parseInt($('#quantity_'+cartItemId).val());
+            if (quantity > 1) {
+                quantity--;
+                updateCartQuantity(cartItemId, quantity);
+            }
+        }
+
+        //Update cart quantity
+        function updateCartQuantity(itemId, quantity) {
+            $.ajax({
+                url: '{{ route('cart.update') }}',
+                type: 'PUT',
+                headers: {
+                    'X-CSRF-TOKEN': `{{ csrf_token() }}`
+                },
+                data: {
+                    product_id: itemId,
+                    quantity: quantity
+                },
+                success: function (response) {
+                    if (response.error == 0) {
+                        reloadSideBarCart();
+                        // reloadSideBarPay()
+                    }
+                },
+                error: function (xhr, status, error) {
+                    toastr.error(xhr.responseJSON.message);
+                }
+            });
+        }
+    });
     //Add specific product to cart
     function addToCart(id) {
         var formData = new FormData();
@@ -153,7 +224,6 @@
             var count_cart = cartItems.length;
 
             if (count_cart > 0) {
-                console.log(156,cartItems)
                 $.each(cartItems, function (index, cartItem) {
                     total_money += cartItem.total_money;
                     var formattedTotal = cartItem.price.toLocaleString('vi-VN', {
@@ -257,79 +327,6 @@
     });
 </script>
 
-<script>
-    $(document).ready(function () {
-        $(document).on("click", ".removeCartBtn", function () {
-            var productId = $(this).attr('data-value-id');
-
-            $.ajax({
-                url: '{{ route('cart.remove') }}',
-                type: 'POST',
-                data: {
-                    product_id: productId
-                },
-                headers: {
-                    'X-CSRF-TOKEN': `{{ csrf_token() }}`
-                },
-                success: function (response) {
-                    if (response.error == 0) {
-                        toastr.success(response.message);
-                        reloadSideBarCart();
-                        reloadSideBarPay()
-                    }
-                },
-                error: function (xhr, status, error) {
-                    toastr.error(xhr.responseJSON.message);
-                }
-            });
-
-        });
-
-        //Handle cart quantity update
-        $(document).on('click', '.increaseBtn', increaseQuantity);
-        $(document).on('click', '.decreaseBtn', decreaseQuantity);
-
-        function increaseQuantity() {
-            var cartItemId = $(this).attr('data-value-id');
-            var quantity = parseInt($('#quantity_'+cartItemId).val());
-            quantity++;
-            updateCartQuantity(cartItemId, quantity);
-        }
-
-        function decreaseQuantity() {
-            var cartItemId =$(this).attr('data-value-id');
-            var quantity = parseInt($('#quantity_'+cartItemId).val());
-            if (quantity > 1) {
-                quantity--;
-                updateCartQuantity(cartItemId, quantity);
-            }
-        }
-
-        //Update cart quantity
-        function updateCartQuantity(itemId, quantity) {
-            $.ajax({
-                url: '{{ route('cart.update') }}',
-                type: 'PUT',
-                headers: {
-                    'X-CSRF-TOKEN': `{{ csrf_token() }}`
-                },
-                data: {
-                    product_id: itemId,
-                    quantity: quantity
-                },
-                success: function (response) {
-                    if (response.error == 0) {
-                        reloadSideBarCart();
-                        reloadSideBarPay()
-                    }
-                },
-                error: function (xhr, status, error) {
-                    toastr.error(xhr.responseJSON.message);
-                }
-            });
-        }
-    });
-</script>
 </body>
 
 </html>

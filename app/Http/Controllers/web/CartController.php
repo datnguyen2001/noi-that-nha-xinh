@@ -24,7 +24,7 @@ class CartController extends Controller
                     return response()->json(['error' => -1, 'message' => "Not found product"], 400);
                 }
 
-                $total_money = $product->price_promotional??0*$quantity;
+                $total_money = $product->price_promotional * $quantity;
 
                 $cartDetails[] = [
                     'id' => $product->id,
@@ -32,7 +32,7 @@ class CartController extends Controller
                     'slug'=> $product->slug,
                     'cost' => $product->price??0,
                     'price' => $product->price_promotional??0,
-                    'total_money' => $total_money,
+                    'total_money' => $total_money??0,
                     'thumbnail' => $product->src,
                     'quantity' => $quantity,
                 ];

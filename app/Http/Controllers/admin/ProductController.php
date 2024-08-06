@@ -90,6 +90,7 @@ class ProductController extends Controller
                 'sectors'=>$request->get('sectors'),
                 'producer'=>$request->get('producer'),
                 'other_materials'=>$request->get('other_materials'),
+                'quantity'=>$request->get('quantity'),
                 'price'=>isset($price) ? str_replace(",", "", $price) : null,
                 'price_promotional' => isset($price_promotional) ? str_replace(",", "", $price_promotional) : null,
                 'pricing'=>$pricing,
@@ -196,6 +197,7 @@ class ProductController extends Controller
             $product->sectors = $request->get('sectors');
             $product->producer = $request->get('producer');
             $product->other_materials = $request->get('other_materials');
+            $product->quantity = $request->get('quantity');
             $product->price = isset($price) ? str_replace(",", "", $price) : null;
             $product->price_promotional = isset($price_promotional) ? str_replace(",", "", $price_promotional) : null;
             $product->pricing = $pricing;

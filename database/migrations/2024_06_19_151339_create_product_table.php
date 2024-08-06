@@ -26,6 +26,7 @@ return new class extends Migration
             $table->integer('price')->nullable();
             $table->integer('price_promotional')->nullable();
             $table->integer('pricing')->default(0);
+            $table->integer('quantity')->default(0);
             $table->longText('describe')->nullable();
             $table->longText('why_choose_us')->nullable();
             $table->integer('display')->default(1);
