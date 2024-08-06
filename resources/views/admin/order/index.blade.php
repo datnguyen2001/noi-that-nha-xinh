@@ -75,6 +75,12 @@
                                                     <a href="{{url('admin/order-status/'.$value->id.'/1')}}" class="btn btn-success">Xác nhận</a>
                                                     <a href="{{url('admin/order-status/'.$value->id.'/2')}}" class="btn btn-danger">Từ chối</a>
                                                 @endif
+                                                    <a href="{{url('admin/edit-order/'.$value->id)}}"
+                                                       class="btn btn-icon btn-light btn-hover-success btn-sm"
+                                                       data-bs-toggle="tooltip" data-bs-placement="top" title=""
+                                                       data-bs-original-title="Cập nhật">
+                                                        <i class="bi bi-pencil-square "></i>
+                                                    </a>
                                             </td>
                                         </tr>
                                     @endforeach

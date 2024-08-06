@@ -63,6 +63,35 @@
 @endsection
 @section('script_page')
 <script>
+    $(document).on("click", ".removeCartBtnPay", function () {
+        var productId = $(this).attr('data-value-id');
+
+        $.ajax({
+            url: '{{ route('cart.remove') }}',
+            type: 'POST',
+            data: {
+                product_id: productId
+            },
+            headers: {
+                'X-CSRF-TOKEN': `{{ csrf_token() }}`
+            },
+            success: function (response) {
+                if (response.error == 0) {
+                    toastr.success(response.message);
+                    if (response.count_data>0){
+                        reloadSideBarCart();
+                    }else{
+                        window.location.href = window.location.origin
+                    }
+                }
+            },
+            error: function (xhr, status, error) {
+                toastr.error(xhr.responseJSON.message);
+            }
+        });
+
+    });
+
     reloadSideBarPay();
     //Get cart details
     function getPay(callback) {
@@ -113,7 +142,7 @@
                         <a href="${window.location.origin + '/san-pham/' + cartItem.slug}">
                             <img src="${cartItem.thumbnail}" class="img-responsive"/>
                         </a>
-                        <a class="del-pro-link removeCartBtn" data-value-id="${cartItem.id}" style="color: red">
+                        <a class="del-pro-link removeCartBtnPay" data-value-id="${cartItem.id}" style="color: red">
                             <i class="fa-solid fa-circle-xmark" style="font-size: 16px; margin-right: 3px"></i>Xóa</a>
                     </div>
                     <div class="product-detail">

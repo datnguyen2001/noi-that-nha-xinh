@@ -147,6 +147,8 @@ Route::middleware('check-admin-auth')->group(function () {
     Route::get('information', [DashboardController::class, 'information'])->name('information');
     Route::get('order', [DashboardController::class, 'order'])->name('order');
     Route::get('order-status/{order_id}/{status}', [DashboardController::class,'statusOrder'])->name('order-status');
+    Route::get('edit-order/{id}', [DashboardController::class, 'editOrder']);
+    Route::post('update-order/{id}', [DashboardController::class, 'updateOrder'])->name('update-order');
 
 });
 

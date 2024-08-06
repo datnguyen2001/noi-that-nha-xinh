@@ -116,7 +116,6 @@
                     if (response.error == 0) {
                         toastr.success(response.message);
                         reloadSideBarCart();
-                        // reloadSideBarPay()
                     }
                 },
                 error: function (xhr, status, error) {
@@ -161,7 +160,9 @@
                 success: function (response) {
                     if (response.error == 0) {
                         reloadSideBarCart();
-                        // reloadSideBarPay()
+                        if (typeof reloadSideBarPay === 'function') {
+                            reloadSideBarPay();
+                        }
                     }
                 },
                 error: function (xhr, status, error) {

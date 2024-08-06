@@ -70,11 +70,62 @@ class DashboardController extends Controller
                 if ($order) {
                     $order->status = $status;
                     $order->save();
+                    if ($status == 2){
+                        $product = ProductModel::find($order->product_id);
+                        $product->quantity = $product->quantity + $order->quantity;
+                        $product->save();
+                    }
                     return \redirect()->route('admin.order')->with(['success' => 'Xét trạng thái đơn hàng thành công']);
                 }
 
         } catch (\Exception $exception) {
             dd($exception);
+        }
+    }
+
+    public function editOrder ($id)
+    {
+        try{
+            $data = OrderModel::find($id);
+            $data->name_product = ProductModel::find($data->product_id)->name;
+            $titlePage = 'Cập nhật đơn hàng';
+            $page_menu = 'order';
+            $page_sub = null;
+            return view('admin.order.edit', compact('titlePage', 'page_menu', 'page_sub', 'data'));
+        }catch (\Exception $exception){
+            return back()->with(['error' => $exception->getMessage()]);
+        }
+    }
+
+    public function updateOrder ($id, Request $request)
+    {
+        try{
+            $data = OrderModel::find($id);
+            $quantity = $data->quantity;
+            $data->name = $request->get('name');
+            $data->phone = $request->get('phone');
+            $data->email = $request->get('email');
+            $data->address = $request->get('address');
+            $data->note = $request->get('note');
+            $data->quantity = $request->get('quantity');
+            $data->status = $request->get('status');
+            $data->save();
+            $product = ProductModel::find($data->product_id);
+            if ($request->get('status') == 2){
+                $product->quantity = $product->quantity + $data->quantity;
+                $product->save();
+            }else{
+                $number = ($product->quantity+$quantity) - $data->quantity;
+                if ($number<0){
+                    toastr()->error('Sản phẩm '.$product->name.' vượt quá số lượng trong kho');
+                    return redirect()->back();
+                }
+                $product->quantity = $number;
+                $product->save();
+            }
+            return redirect()->route('admin.order')->with(['success' => 'Cập nhật đơn hàng thành công']);
+        }catch (\Exception $e){
+            return back()->with(['error' => $e->getMessage()]);
         }
     }
 }

@@ -134,11 +134,11 @@ class CartController extends Controller
 
                     $cartItemsJson = json_encode($cartItems);
 
-                    return response()->json(['error' => 0, 'message' => "Xóa sản phẩm thành công"])->cookie('cartItems', $cartItemsJson);
+                    return response()->json(['error' => 0, 'message' => "Xóa sản phẩm thành công",'count_data'=>count($cartItems)])->cookie('cartItems', $cartItemsJson);
                 }
             }
 
-            return response()->json(['error' => 0, 'message' => "Success remove address"]);
+            return response()->json(['error' => 0, 'message' => "Success remove cart"]);
         } catch (\Exception $e) {
             return response()->json(['error' => -1, 'message' => $e->getMessage()], 400);
         }
