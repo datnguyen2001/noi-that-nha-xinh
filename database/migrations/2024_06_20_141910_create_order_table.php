@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->integer('product_id');
             $table->integer('quantity')->default(0);
+            $table->integer('price')->nullable();
+            $table->integer('total_money')->nullable();
             $table->integer('vocative')->comment('1 là anh, 2 là chị');
             $table->string('phone');
             $table->string('email')->nullable();

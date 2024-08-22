@@ -6,7 +6,7 @@ return [
             'name' => 'dashboard',
             'title' => 'Dashboard',
             'icon' => 'bi bi-grid',
-            'route' => 'admin.index',
+            'route' => 'admin.dashboard',
             'submenu' => [],
             'number' => 1
         ],

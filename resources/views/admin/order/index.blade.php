@@ -54,6 +54,12 @@
                                                     @else
                                                     Số lượng: Liên hệ
                                                 @endif
+                                                <br>
+                                                @if($value->total_money)
+                                                Tổng tiền: {{number_format($value->total_money)}} VND
+                                                    @else
+                                                    Giá: Liên hệ
+                                                    @endif
                                             </td>
                                             <td>
                                                 {{@$value->note}}

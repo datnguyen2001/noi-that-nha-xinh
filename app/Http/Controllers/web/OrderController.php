@@ -60,6 +60,14 @@ class OrderController extends Controller
                 $order->name = $validatedData['customer-name'];
                 $order->product_id = $cartItem['id'];
                 $order->quantity = $cartItem['quantity'];
+                if ($cartItem['cost']){
+                    $order->price = $cartItem['cost'];
+                }elseif ($cartItem['price']){
+                    $order->price = $cartItem['price'];
+                }
+                if ($cartItem['total_money']){
+                    $order->total_money = $cartItem['total_money'];
+                }
                 $order->vocative = $validatedData['customer-gender'];
                 $order->phone = $validatedData['customer-phone'];
                 $order->email = $request->get('customer-email');

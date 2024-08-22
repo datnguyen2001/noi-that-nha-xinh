@@ -45,12 +45,33 @@
                             <input class="form-control" name="product" type="text" value="{{$data->name_product}}" disabled>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mb-3">
                         <div class="col-3">Số lượng mua :</div>
                         <div class="col-8">
                             <input class="form-control" name="quantity" type="text" value="{{$data->quantity}}">
                         </div>
                     </div>
+                    @if($data->total_money)
+                        <div class="row mb-3">
+                            <div class="col-3">Giá của từng cái :</div>
+                            <div class="col-8">
+                                <input class="form-control" name="price" type="text" value="{{number_format($data->price)}}" disabled>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">Tổng tiền :</div>
+                            <div class="col-8">
+                                <input class="form-control" name="total_money" type="text" value="{{number_format($data->total_money)}}" disabled>
+                            </div>
+                        </div>
+                        @else
+                        <div class="row">
+                            <div class="col-3">Giá :</div>
+                            <div class="col-8">
+                                <input class="form-control" name="price" type="text" value="Liên hệ" disabled>
+                            </div>
+                        </div>
+                        @endif
                     <div class="row mt-3">
                         <div class="col-3">Trạng thái :</div>
                         <div class="col-8">

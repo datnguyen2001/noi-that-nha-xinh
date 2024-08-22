@@ -24,6 +24,7 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware('check-admin-auth')->group(function () {
     Route::get('', [DashboardController::class, 'index'])->name('index');
+    Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
     Route::prefix('banner')->name('banner.')->group(function () {
         Route::get('/', [BannerController::class, 'index'])->name('index');
