@@ -78,7 +78,9 @@
                             <select name="status" class="form-control" required>
                                 <option value="0" @if($data->status == 0) selected @endif>Chờ xác nhận</option>
                                 <option value="1" @if($data->status == 1) selected @endif>Xác nhận</option>
-                                <option value="2" @if($data->status == 2) selected @endif>Từ chối</option>
+                                <option value="2" @if($data->status == 2) selected @endif>Giao hàng</option>
+                                <option value="3" @if($data->status == 3) selected @endif>Thành công</option>
+                                <option value="4" @if($data->status == 4) selected @endif>Từ chối</option>
                             </select>
                         </div>
                     </div>

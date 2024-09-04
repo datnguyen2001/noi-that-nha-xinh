@@ -6,24 +6,32 @@ use App\Http\Controllers\Controller;
 use App\Models\OrderModel;
 use App\Models\ProductModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class OrderController extends Controller
 {
     public function submitOrder(Request $request)
     {
-        $validatedData = $request->validate([
-            'customer-gender' => 'required|in:1,2',
-            'customer-name' => 'required|string|max:255',
-            'customer-phone' => 'required|string|max:15',
-            'customer-email' => 'nullable|email|max:255',
-            'customer-address' => 'nullable|string|max:255',
-            'order-note' => 'nullable|string|max:255',
+        $validator = Validator::make($request->all(), [
+            'customer_gender' => 'required|in:1,2',
+            'customer_name' => 'required|string|max:255',
+            'customer_phone' => 'required|string|max:10',
+            'customer_email' => 'nullable|email|max:255',
+            'customer_address' => 'nullable|string|max:255',
+            'order_note' => 'nullable|string|max:255',
         ]);
-        $product = ProductModel::find($request->product_id);
-        if ($product->quantity < 1){
-            toastr()->error('Sản phẩm '.$product->name.' vượt quá số lượng trong kho');
-            return redirect()->back();
+
+        if ($validator->fails()) {
+            $errors = $validator->errors();
+
+            foreach ($errors->all() as $error) {
+                toastr()->error($error);
+            }
+            return back();
         }
+
+        $validatedData = $validator->validated();
+
         $order = new OrderModel();
         $order->name = $validatedData['customer-name'];
         $order->product_id = $request->product_id;
@@ -34,19 +42,27 @@ class OrderController extends Controller
         $order->address = $validatedData['customer-address'];
         $order->note = $validatedData['order-note'];
         $order->save();
-        $product->quantity =  $product->quantity - 1;
-        $product->save();
 
         return redirect()->back()->with('success', 'Đơn hàng của bạn đã được đặt thành công!');
     }
 
     public function submitOrderProduct(Request $request)
     {
-        $validatedData = $request->validate([
+        $validator = Validator::make($request->all(), [
             'customer-gender' => 'required|in:1,2',
             'customer-name' => 'required|string|max:255',
-            'customer-phone' => 'required|string|max:15',
+            'customer-phone' => 'required|string|max:10',
         ]);
+
+        if ($validator->fails()) {
+            $errors = $validator->errors();
+            foreach ($errors->all() as $error) {
+                toastr()->error($error);
+            }
+            return back();
+        }
+
+        $validatedData = $validator->validated();
         $cartItemsJson = $request->input('dataProduct');
         $cartItems = json_decode($cartItemsJson, true);
         if (is_array($cartItems)){
