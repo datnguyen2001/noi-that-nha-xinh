@@ -95,7 +95,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 @yield('script_page')
-<script src="{{ asset('assets/js/main.js') }}"></script>
 
 {{-- CART --}}
 <script>
@@ -133,7 +132,11 @@
             var cartItemId = $(this).attr('data-value-id');
             var quantity = parseInt($('#quantity_'+cartItemId).val());
             quantity++;
-            updateCartQuantity(cartItemId, quantity);
+
+            disableButtons(true);
+            updateCartQuantity(cartItemId, quantity, function() {
+                disableButtons(false);
+            });
         }
 
         function decreaseQuantity() {
@@ -141,10 +144,15 @@
             var quantity = parseInt($('#quantity_'+cartItemId).val());
             if (quantity > 1) {
                 quantity--;
-                updateCartQuantity(cartItemId, quantity);
+                disableButtons(true);
+                updateCartQuantity(cartItemId, quantity,function() {
+                    disableButtons(false);
+                });
             }
         }
-
+        function disableButtons(disable) {
+            $('.increaseBtn, .decreaseBtn').prop('disabled', disable);
+        }
         //Update cart quantity
         function updateCartQuantity(itemId, quantity) {
             $.ajax({
@@ -167,6 +175,7 @@
                 },
                 error: function (xhr, status, error) {
                     toastr.error(xhr.responseJSON.message);
+                    disableButtons(true);
                 }
             });
         }

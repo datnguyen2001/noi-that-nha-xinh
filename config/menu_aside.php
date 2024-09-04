@@ -4,7 +4,7 @@ return [
     'admin' => [
         [
             'name' => 'dashboard',
-            'title' => 'Dashboard',
+            'title' => 'Xem doanh số',
             'icon' => 'bi bi-grid',
             'route' => 'admin.dashboard',
             'submenu' => [],

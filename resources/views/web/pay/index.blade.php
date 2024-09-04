@@ -41,8 +41,8 @@
                                        placeholder="Địa chỉ email (Không bắt buộc)">
                             </div>
                             <div class="col-md-12 col-xs-12">
-                                <input class="form-control" type="text" name="customer-address" autocomplete="off" id="customer-address" value="{{ old('customer-address', request()->get('customer-address')) }}"
-                                       placeholder="Địa chỉ nhận hàng (Không bắt buộc)">
+                                <input class="form-control" type="text" name="customer-address" autocomplete="off" id="customer-address" required value="{{ old('customer-address', request()->get('customer-address')) }}"
+                                       placeholder="Địa chỉ nhận hàng ">
                             </div>
                             <div class="col-md-12 col-xs-12">
                                 <input class="form-control" type="text" name="order-note" autocomplete="off" id="order-note" value="{{ old('order-note', request()->get('order-note')) }}"

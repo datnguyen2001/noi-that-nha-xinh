@@ -180,7 +180,7 @@
             }
         }
         $(document).on("click", "button.clear2", function () {
-            parent2 = $(this).closest(".div-parent");
+            parent2 = $(this).closest(".div-parent2");
             $(".div-file2").remove();
             let html = '<button type="button" class="position-absolute border-0 bg-transparent select-image2" style="top: 50%;left: 50%;transform: translate(-50%,-50%)">\n' +
                 '                                    <i style="font-size: 30px" class="bi bi-download"></i>\n' +

@@ -102,6 +102,11 @@ class CartController extends Controller
                 return response()->json(['error' => -1, 'message' => "Invalid data"], 400);
             }
 
+            $product = ProductModel::find($product_id);
+            if ($product->quantity < $quantity){
+                return response()->json(['error' => -1, 'message' => "Số lượng sản phẩm vượt quá trong kho"], 400);
+            }
+
 
             foreach ($cartItems as $key => $item) {
                 if ($item['product_id'] == $product_id) {

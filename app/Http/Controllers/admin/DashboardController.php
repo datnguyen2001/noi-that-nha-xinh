@@ -36,7 +36,7 @@ class DashboardController extends Controller
 
         while ($currentDate <= $lastDayOfMonth) {
             $dailySales = DB::table('order')
-                ->where('status', 1) // Chỉ tính những đơn hàng đã xác nhận
+                ->where('status', 4) // Chỉ tính những đơn hàng đã hoàn thành
                 ->whereDate('created_at', $currentDate)
                 ->sum('total_money');
 
@@ -100,7 +100,7 @@ class DashboardController extends Controller
             if ($order) {
                 $order->status = $status;
                 $order->save();
-                if ($status == 2) {
+                if ($status == 4) {
                     $product = ProductModel::find($order->product_id);
                     $product->quantity = $product->quantity + $order->quantity;
                     $product->save();

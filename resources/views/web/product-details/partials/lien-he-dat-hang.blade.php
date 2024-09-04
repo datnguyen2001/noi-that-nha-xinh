@@ -25,7 +25,7 @@
                 Bạn vui lòng nhập đúng số điện thoại để chúng tôi sẽ gọi xác nhận đơn hàng trước khi giao hàng. Xin cảm ơn!
             </div>
             <div class="devvn-popup-content-right">
-                <form class="devvn_cusstom_info" id="devvn_cusstom_info" method="post" novalidate="novalidate" action="{{ route('order') }}">
+                <form class="devvn_cusstom_info" id="devvn_cusstom_info" method="post" action="{{ route('order') }}">
                     @csrf
                     <div class="popup-customer-info">
                         <div class="popup-customer-info-title">Thông tin người mua</div>
@@ -54,7 +54,7 @@
                         </div>
                         <div class="popup-customer-info-group">
                             <div class="popup-customer-info-item-1">
-                                <textarea class="customer-address form-control" name="customer-address" placeholder="Địa chỉ nhận hàng (Không bắt buộc)"></textarea>
+                                <textarea class="customer-address form-control" name="customer-address" required placeholder="Địa chỉ nhận hàng"></textarea>
                             </div>
                         </div>
                         <div class="popup-customer-info-group">

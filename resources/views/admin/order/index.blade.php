@@ -71,7 +71,11 @@
                                                 @if($value->status ==1)
                                                     Đã xác nhận
                                                     @elseif($value->status == 2)
-                                                    Đã hủy
+                                                    Giao hàng
+                                                @elseif($value->status == 3)
+                                                    Thành công
+                                                @elseif($value->status == 4)
+                                                    Hủy
                                                 @else
                                                     Chờ xác nhận
                                                 @endif
@@ -79,7 +83,13 @@
                                             <td>
                                                 @if($value->status ==0)
                                                     <a href="{{url('admin/order-status/'.$value->id.'/1')}}" class="btn btn-success">Xác nhận</a>
-                                                    <a href="{{url('admin/order-status/'.$value->id.'/2')}}" class="btn btn-danger">Từ chối</a>
+                                                    <a href="{{url('admin/order-status/'.$value->id.'/4')}}" class="btn btn-danger">Từ chối</a>
+                                                    @elseif($value->status ==1)
+                                                    <a href="{{url('admin/order-status/'.$value->id.'/2')}}" class="btn btn-success">Giao hàng</a>
+                                                    <a href="{{url('admin/order-status/'.$value->id.'/4')}}" class="btn btn-danger">Từ chối</a>
+                                                @elseif($value->status ==2)
+                                                    <a href="{{url('admin/order-status/'.$value->id.'/3')}}" class="btn btn-success">Thành công</a>
+                                                    <a href="{{url('admin/order-status/'.$value->id.'/4')}}" class="btn btn-danger">Từ chối</a>
                                                 @endif
                                                     <a href="{{url('admin/edit-order/'.$value->id)}}"
                                                        class="btn btn-icon btn-light btn-hover-success btn-sm"
