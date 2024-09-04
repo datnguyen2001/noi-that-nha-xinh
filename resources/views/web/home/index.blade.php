@@ -46,9 +46,9 @@
                 <section id="video360" class="video360-section home-section">
                     @include('web.home.partials.full_video')
                 </section>
-                <section class="home-section" id="testimonials">
+                <!-- <section class="home-section" id="testimonials">
                     @include('web.home.partials.comment')
-                </section>
+                </section> -->
                 <section id="setofproduct" class="home-section">
                     @include('web.home.partials.collection')
                 </section>

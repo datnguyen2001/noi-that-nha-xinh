@@ -112,14 +112,14 @@ return [
             ],
             'number' => 6
         ],
-        [
-            'name' => 'comment',
-            'title' => 'Nhận xét của khách hàng',
-            'icon' => 'bi bi-grid',
-            'route' => 'admin.comment.index',
-            'submenu' => [],
-            'number' => 9
-        ],
+        // [
+        //     'name' => 'comment',
+        //     'title' => 'Nhận xét của khách hàng',
+        //     'icon' => 'bi bi-grid',
+        //     'route' => 'admin.comment.index',
+        //     'submenu' => [],
+        //     'number' => 9
+        // ],
         [
             'name' => 'contact_us',
             'title' => 'Liên hệ với chúng tôi',

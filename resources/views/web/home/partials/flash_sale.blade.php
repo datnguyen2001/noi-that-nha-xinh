@@ -15,7 +15,7 @@
                             </a>
                         </div>
                         <h3 class="woocommerce-loop-product__title">
-                            <a title="BỘ SOFA GỖ ÓC CHÓ ROMA – 02" href="{{route('product-detail', $pro->slug)}}">
+                            <a title="" href="{{route('product-detail', $pro->slug)}}">
                                 {{$pro->name}}
                             </a>
                         </h3>

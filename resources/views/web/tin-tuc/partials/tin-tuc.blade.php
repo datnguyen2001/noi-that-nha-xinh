@@ -8,7 +8,7 @@
                     <article id="post-6946" class="element hentry post-item item-new col-md-4 post-6946 tuvan type-tuvan status-publish has-post-thumbnail tu_van-khuyen-mai tu_van-tin-tuc-khuyen-mai">
                         <div class="post-inner">
                             <div class="entry-thumb">
-                                <a class="d-block" {{route('khuyen-mai-details', $news->slug)}} title="{{$news->name}}">
+                                <a class="d-block" href=" {{route('khuyen-mai-details', $news->slug)}}" title="{{$news->name}}">
                                     <img width="100%" height="100%"
                                          alt="{{$news->name}}" decoding="async" fetchpriority="high"
                                          data-srcset="{{asset($news->src)}}"
@@ -19,7 +19,7 @@
                             </div>
                             <div class="entry-content">
                                 <h2 class="entry-title">
-                                    <a {{route('khuyen-mai-details', $news->slug)}} title="{{$news->name}}">
+                                    <a href=" {{route('khuyen-mai-details', $news->slug)}}" title="{{$news->name}}">
                                        {{$news->name}}
                                     </a>
                                 </h2>

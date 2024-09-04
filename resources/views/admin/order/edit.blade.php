@@ -76,7 +76,7 @@
                         <div class="col-3">Trạng thái :</div>
                         <div class="col-8">
                             <select name="status" class="form-control" required>
-                                <option value="1" @if($data->status == 0) selected @endif>Chờ xác nhận</option>
+                                <option value="0" @if($data->status == 0) selected @endif>Chờ xác nhận</option>
                                 <option value="1" @if($data->status == 1) selected @endif>Xác nhận</option>
                                 <option value="2" @if($data->status == 2) selected @endif>Từ chối</option>
                             </select>
